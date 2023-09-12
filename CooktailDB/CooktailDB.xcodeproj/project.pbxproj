@@ -12,6 +12,10 @@
 		BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */; };
 		BBB676F82AAFFE6F00CCBEF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F72AAFFE6F00CCBEF6 /* Assets.xcassets */; };
 		BBB676FB2AAFFE6F00CCBEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F92AAFFE6F00CCBEF6 /* LaunchScreen.storyboard */; };
+		BBB677082AB0183900CCBEF6 /* Cooktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB677072AB0183900CCBEF6 /* Cooktail.swift */; };
+		BBB6770B2AB0188100CCBEF6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6770A2AB0188100CCBEF6 /* APIManager.swift */; };
+		BBB6770D2AB0208000CCBEF6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6770C2AB0208000CCBEF6 /* Ingredient.swift */; };
+		BBB6770F2AB0367100CCBEF6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6770E2AB0367100CCBEF6 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		BBB676F72AAFFE6F00CCBEF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBB676FA2AAFFE6F00CCBEF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBB676FC2AAFFE6F00CCBEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB677072AB0183900CCBEF6 /* Cooktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cooktail.swift; sourceTree = "<group>"; };
+		BBB6770A2AB0188100CCBEF6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BBB6770C2AB0208000CCBEF6 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		BBB6770E2AB0367100CCBEF6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		BBB676ED2AAFFE6A00CCBEF6 /* CooktailDB */ = {
 			isa = PBXGroup;
 			children = (
+				BBB677092AB0186D00CCBEF6 /* API */,
 				BBB677032AAFFEDB00CCBEF6 /* ControllerView */,
 				BBB677022AAFFECB00CCBEF6 /* Models */,
 				BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */,
@@ -61,6 +70,7 @@
 				BBB676F72AAFFE6F00CCBEF6 /* Assets.xcassets */,
 				BBB676F92AAFFE6F00CCBEF6 /* LaunchScreen.storyboard */,
 				BBB676FC2AAFFE6F00CCBEF6 /* Info.plist */,
+				BBB6770E2AB0367100CCBEF6 /* Constant.swift */,
 			);
 			path = CooktailDB;
 			sourceTree = "<group>";
@@ -68,6 +78,8 @@
 		BBB677022AAFFECB00CCBEF6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BBB677072AB0183900CCBEF6 /* Cooktail.swift */,
+				BBB6770C2AB0208000CCBEF6 /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -78,6 +90,14 @@
 				BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */,
 			);
 			path = ControllerView;
+			sourceTree = "<group>";
+		};
+		BBB677092AB0186D00CCBEF6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BBB6770A2AB0188100CCBEF6 /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBB6770B2AB0188100CCBEF6 /* APIManager.swift in Sources */,
 				BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */,
+				BBB6770D2AB0208000CCBEF6 /* Ingredient.swift in Sources */,
 				BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */,
+				BBB677082AB0183900CCBEF6 /* Cooktail.swift in Sources */,
+				BBB6770F2AB0367100CCBEF6 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
