@@ -5,12 +5,14 @@ final class ViewController: UIViewController {
     private let image = ["Popular", "Ordinary_Drink", "Coffee_Tea", "Soft_Drink_Soda"]
     private var categories: [Category] = []
     private var cooktails: [Cooktail] = []
-    @IBOutlet weak var favoriteCollectionView: UICollectionView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var favoriteCollectionView: UICollectionView!
     @IBOutlet private weak var categoryCollectionView: UICollectionView!
     private var currentCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCooktail()
+        configSearchBar()
         configCategory()
         configCollectionView()
     }
@@ -20,6 +22,9 @@ final class ViewController: UIViewController {
                             categoryName: data[index],
                             categoryNumber: index + 1)
         }
+    }
+    private func configSearchBar() {
+        searchBar.delegate = self
     }
     private func configCollectionView() {
         if let layout = categoryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -56,6 +61,20 @@ final class ViewController: UIViewController {
                 print("Error fetching API")
             })
         }
+    @IBAction func categorySeeAllTouchUp(_ sender: Any) {
+        if let listView = storyboard?.instantiateViewController(
+            withIdentifier: Constant.ControllerView.list) as? ListViewController {
+            listView.setCategories(categories: categories)
+            self.navigationController?.pushViewController(listView, animated: true)
+        }
+    }
+    @IBAction func favoriteSeeAllTouchUp(_ sender: Any) {
+        if let listView = storyboard?.instantiateViewController(
+            withIdentifier: Constant.ControllerView.list) as? ListViewController {
+            listView.setCooktails(cooktails: cooktails)
+            self.navigationController?.pushViewController(listView, animated: true)
+        }
+    }
 }
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -94,6 +113,30 @@ extension ViewController: UICollectionViewDelegate {
             return Constant.CategoryCollectionViewConfig.cellSize
         } else {
             return Constant.FavoriteCollectionViewConfig.cellSize
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == currentCollectionView {
+            if let listView = storyboard?.instantiateViewController(
+                withIdentifier: Constant.ControllerView.list) as? ListViewController {
+                self.navigationController?.pushViewController(listView, animated: true)
+            }
+        } else {
+            if let detailView = storyboard?.instantiateViewController(
+                withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
+                self.navigationController?.pushViewController(detailView, animated: true)
+            }
+        }
+    }
+}
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let listView = storyboard?.instantiateViewController(
+            withIdentifier: Constant.ControllerView.list) as? ListViewController {
+            self.navigationController?.pushViewController(listView, animated: true)
         }
     }
 }

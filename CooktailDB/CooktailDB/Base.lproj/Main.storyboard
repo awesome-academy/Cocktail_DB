@@ -53,6 +53,9 @@
                                         <state key="normal" title="See All">
                                             <color key="titleColor" systemColor="systemPinkColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categorySeeAllTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ptk-HN-50U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -108,6 +111,9 @@
                                         <state key="normal" title="See All">
                                             <color key="titleColor" systemColor="systemPinkColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="favoriteSeeAllTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0W-Un-JMn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -161,11 +167,46 @@
                     <connections>
                         <outlet property="categoryCollectionView" destination="kFr-zH-ilI" id="yfX-Y7-chC"/>
                         <outlet property="favoriteCollectionView" destination="9fE-gX-xIa" id="MPg-Ir-krF"/>
+                        <outlet property="searchBar" destination="Aff-u4-WF0" id="gzW-1s-wLq"/>
+                        <segue destination="ZQW-1Z-cw1" kind="show" identifier="ListBackHome" id="K8c-xc-fJ1"/>
+                        <segue destination="AcT-UM-A16" kind="show" identifier="DetailBackHome" id="hmT-Xm-zw6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021.7391304347827" y="76.339285714285708"/>
+            <point key="canvasLocation" x="1199" y="76"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="dFi-vs-GDV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2Z-s0-djj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ListViewController" id="ZQW-1Z-cw1" customClass="ListViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gb2-kF-0rf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dfQ-K3-CGQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sli-fW-8R8"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2164" y="76"/>
+        </scene>
+        <!--Detail Cooktail View Controller-->
+        <scene sceneID="law-pE-tK3">
+            <objects>
+                <viewController storyboardIdentifier="DetailCooktailViewController" id="AcT-UM-A16" customClass="DetailCooktailViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJS-q9-P0t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lTO-EN-5g2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VEp-uU-uNA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9S-tx-2yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="832"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRS-54-HBT">

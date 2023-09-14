@@ -43,5 +43,9 @@ class Constant {
         static let uiNibNameCell = "CategoryViewCellCollectionViewCell"
         static let cellWithReuseIdentifier = "CategoryCollectionViewCell"
     }
-
+    struct ControllerView {
+        static let detail = "DetailCooktailViewController"
+        static let home = "HomeControllerView"
+        static let list = "ListViewController"
+    }
 }
