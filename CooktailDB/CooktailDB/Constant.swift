@@ -17,10 +17,10 @@ class Constant {
         static let getIngredientsImage = "ingredients"
     }
     struct Category {
-        static let popular = "Popular"
-        static let ordinary = "Ordinary_Drink"
-        static let coffeeTea = "Coffee/Tea"
-        static let softSoda = "Soft_Drink/Soda"
+        static let popular = "Cocktail"
+        static let ordinary = "Ordinary%20Drink"
+        static let coffeeTea = "Coffee%20%5C/%20Tea"
+        static let softSoda = "Soft%20Drink"
     }
     struct Alcoholic {
         static let nope = "Non_Alcoholic"

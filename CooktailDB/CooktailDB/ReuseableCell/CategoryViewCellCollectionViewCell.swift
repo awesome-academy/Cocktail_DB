@@ -19,9 +19,10 @@ final class CategoryViewCellCollectionViewCell: UICollectionViewCell {
         if let image = category.categoryImage {
             self.categoryImage.image = UIImage(named: image)
         }
-        self.categoryName.text = category.categoryName
+        self.categoryName.text = category.categoryName?.replacingOccurrences(of: "%20", with: " ")
+            .replacingOccurrences(of: "%5C", with: "")
         if let number = category.categoryNumber {
-            self.categoryNumber.text = "\(number + 1) mixes"
+            self.categoryNumber.text = "\(number) mixes"
         }
     }
 }

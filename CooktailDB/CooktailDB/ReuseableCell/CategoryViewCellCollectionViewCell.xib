@@ -25,13 +25,13 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CJG-cK-88i" secondAttribute="height" multiplier="25:4" id="8bz-xk-HRf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAF-js-pzK">
                                 <rect key="frame" x="0.0" y="98" width="101" height="6"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
