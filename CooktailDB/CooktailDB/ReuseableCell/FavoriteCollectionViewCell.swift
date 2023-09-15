@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class FavoriteCollectionViewCell: UICollectionViewCell {
-
+final class FavoriteCollectionViewCell: UICollectionViewCell, ReusableView {
+    static var defaultReuseIdentifier = Constant.FavoriteCollectionViewConfig.cellWithReuseIdentifier
     @IBOutlet private weak var leadView2: UIView!
     @IBOutlet private weak var leadView1: UIView!
     @IBOutlet private weak var background: UIView!

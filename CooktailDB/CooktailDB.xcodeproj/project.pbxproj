@@ -24,6 +24,8 @@
 		BBB677202AB2A50100CCBEF6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6771F2AB2A50000CCBEF6 /* Category.swift */; };
 		BBB677222AB2B63C00CCBEF6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB677212AB2B63B00CCBEF6 /* ListViewController.swift */; };
 		BBB677242AB2B69100CCBEF6 /* DetailCooktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB677232AB2B69100CCBEF6 /* DetailCooktailViewController.swift */; };
+		BBB6772A2AB4179900CCBEF6 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB677292AB4179600CCBEF6 /* ReusableView.swift */; };
+		BBB6772D2AB41AD800CCBEF6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6772C2AB41AD800CCBEF6 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		BBB6771F2AB2A50000CCBEF6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BBB677212AB2B63B00CCBEF6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BBB677232AB2B69100CCBEF6 /* DetailCooktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCooktailViewController.swift; sourceTree = "<group>"; };
+		BBB677292AB4179600CCBEF6 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		BBB6772C2AB41AD800CCBEF6 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		BBB676ED2AAFFE6A00CCBEF6 /* CooktailDB */ = {
 			isa = PBXGroup;
 			children = (
+				BBB6772B2AB41AA500CCBEF6 /* Extension */,
 				BBB677142AB1678800CCBEF6 /* ReuseableCell */,
 				BBB677092AB0186D00CCBEF6 /* API */,
 				BBB677032AAFFEDB00CCBEF6 /* ControllerView */,
@@ -88,7 +93,6 @@
 				BBB676F92AAFFE6F00CCBEF6 /* LaunchScreen.storyboard */,
 				BBB676FC2AAFFE6F00CCBEF6 /* Info.plist */,
 				BBB6770E2AB0367100CCBEF6 /* Constant.swift */,
-				BBB677192AB18B0C00CCBEF6 /* Color_Extension.swift */,
 			);
 			path = CooktailDB;
 			sourceTree = "<group>";
@@ -130,6 +134,16 @@
 				BBB6771C2AB1905200CCBEF6 /* FavoriteCollectionViewCell.xib */,
 			);
 			path = ReuseableCell;
+			sourceTree = "<group>";
+		};
+		BBB6772B2AB41AA500CCBEF6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BBB677292AB4179600CCBEF6 /* ReusableView.swift */,
+				BBB677192AB18B0C00CCBEF6 /* Color_Extension.swift */,
+				BBB6772C2AB41AD800CCBEF6 /* UICollectionView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,10 +242,12 @@
 				BBB6770B2AB0188100CCBEF6 /* APIManager.swift in Sources */,
 				BBB677242AB2B69100CCBEF6 /* DetailCooktailViewController.swift in Sources */,
 				BBB677202AB2A50100CCBEF6 /* Category.swift in Sources */,
+				BBB6772D2AB41AD800CCBEF6 /* UICollectionView+.swift in Sources */,
 				BBB677172AB167C400CCBEF6 /* CategoryViewCellCollectionViewCell.swift in Sources */,
 				BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */,
 				BBB6771A2AB18B0D00CCBEF6 /* Color_Extension.swift in Sources */,
 				BBB677222AB2B63C00CCBEF6 /* ListViewController.swift in Sources */,
+				BBB6772A2AB4179900CCBEF6 /* ReusableView.swift in Sources */,
 				BBB6771D2AB1905200CCBEF6 /* FavoriteCollectionViewCell.swift in Sources */,
 				BBB6770D2AB0208000CCBEF6 /* Ingredient.swift in Sources */,
 				BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */,

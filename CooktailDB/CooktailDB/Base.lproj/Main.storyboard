@@ -179,18 +179,61 @@
         <!--List View Controller-->
         <scene sceneID="dFi-vs-GDV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U2Z-s0-djj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ListViewController" id="ZQW-1Z-cw1" customClass="ListViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gb2-kF-0rf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6pH-ii-hil">
+                                <rect key="frame" x="20" y="88" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6pH-ii-hil" secondAttribute="height" multiplier="17:2" id="xre-17-1ia"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nNn-7O-ywQ">
+                                <rect key="frame" x="20" y="150" width="374" height="712"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8DV-nv-B0w">
+                                    <size key="itemSize" width="186" height="170"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kry-bB-oTb">
+                                        <rect key="frame" x="94" y="0.0" width="186" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fpb-VR-GjX">
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="186" height="170"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dfQ-K3-CGQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6pH-ii-hil" firstAttribute="top" secondItem="dfQ-K3-CGQ" secondAttribute="top" id="8BJ-SF-Nl5"/>
+                            <constraint firstItem="nNn-7O-ywQ" firstAttribute="bottom" secondItem="dfQ-K3-CGQ" secondAttribute="bottom" id="DW7-8e-w3R"/>
+                            <constraint firstItem="nNn-7O-ywQ" firstAttribute="leading" secondItem="dfQ-K3-CGQ" secondAttribute="leading" constant="20" id="Qfo-ix-3q9"/>
+                            <constraint firstItem="dfQ-K3-CGQ" firstAttribute="trailing" secondItem="nNn-7O-ywQ" secondAttribute="trailing" constant="20" id="RhY-0A-j06"/>
+                            <constraint firstItem="6pH-ii-hil" firstAttribute="leading" secondItem="dfQ-K3-CGQ" secondAttribute="leading" constant="20" id="XYc-1r-NmQ"/>
+                            <constraint firstItem="dfQ-K3-CGQ" firstAttribute="trailing" secondItem="6pH-ii-hil" secondAttribute="trailing" constant="20" id="dTp-4u-0gs"/>
+                            <constraint firstItem="nNn-7O-ywQ" firstAttribute="top" secondItem="6pH-ii-hil" secondAttribute="bottom" constant="18" id="wbv-2b-TQN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sli-fW-8R8"/>
+                    <connections>
+                        <outlet property="listViewCollectionView" destination="nNn-7O-ywQ" id="y9F-A8-MnY"/>
+                        <outlet property="searchBar" destination="6pH-ii-hil" id="Ofz-tT-JQh"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2Z-s0-djj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="76"/>
+            <point key="canvasLocation" x="2163.768115942029" y="75.669642857142847"/>
         </scene>
         <!--Detail Cooktail View Controller-->
         <scene sceneID="law-pE-tK3">
