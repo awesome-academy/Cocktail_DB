@@ -9,8 +9,16 @@ final class ListViewController: UIViewController {
     @IBOutlet private weak var listViewCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        configCategoryView()
+        configController()
         configSearchBar()
+    }
+    private func configController() {
+        if let target = categories {
+            configCategoryView()
+            print(target)
+        } else if let cooktails = cooktails {
+            print(cooktails)
+        }
     }
     private func configSearchBar() {
         searchBar.delegate = self
@@ -46,9 +54,25 @@ extension ListViewController: UICollectionViewDataSource {
 }
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let toPath = "c="
+        guard let categoryName = categoryViewList?[indexPath.row].categoryName else { return }
+        let url = Constant.BaseUrl.getApiBaseUrl + "/"
+                + Constant.RelativeUrl.getApiRelativeUrl
+            + Constant.Endpoint.filter + toPath
+            + categoryName
+        print(url)
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
-            navigationController?.pushViewController(listView, animated: true)
+            APIManager.shared.request(url: url, type: Cooktails.self, completionHandler: { [weak self] cooktails in
+                guard let cooktails = cooktails.cooktails else { return }
+                listView.setCooktails(cooktails: cooktails)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.navigationController?.pushViewController(listView, animated: true)
+                }
+            }, failureHandler: {
+                print("Error fetching API")
+            })
         }
     }
 }
