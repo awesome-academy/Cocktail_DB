@@ -1,7 +1,7 @@
 import UIKit
 
-final class CategoryViewCellCollectionViewCell: UICollectionViewCell {
-
+final class CategoryViewCellCollectionViewCell: UICollectionViewCell, ReusableView {
+    static var defaultReuseIdentifier = Constant.CategoryCollectionViewConfig.cellWithReuseIdentifier
     @IBOutlet private weak var background: UIView!
     @IBOutlet private weak var categoryImage: UIImageView!
     @IBOutlet private weak var categoryName: UILabel!

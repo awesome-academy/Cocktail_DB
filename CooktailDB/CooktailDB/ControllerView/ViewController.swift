@@ -34,15 +34,11 @@ final class ViewController: UIViewController {
         if let layout = categoryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
-        categoryCollectionView.register(
-            UINib(nibName: Constant.CategoryCollectionViewConfig.uiNibNameCell, bundle: nil),
-            forCellWithReuseIdentifier: Constant.CategoryCollectionViewConfig.cellWithReuseIdentifier)
+        categoryCollectionView.register(nibName: CategoryViewCellCollectionViewCell.self)
         if let layout = favoriteCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
-        favoriteCollectionView.register(
-            UINib(nibName: Constant.FavoriteCollectionViewConfig.uiNibNameCell, bundle: nil),
-            forCellWithReuseIdentifier: Constant.FavoriteCollectionViewConfig.cellWithReuseIdentifier)
+        favoriteCollectionView.register(nibName: FavoriteCollectionViewCell.self)
         currentCollectionView = categoryCollectionView
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
@@ -117,19 +113,11 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == currentCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: Constant.CategoryCollectionViewConfig.cellWithReuseIdentifier,
-                for: indexPath) as? CategoryViewCellCollectionViewCell else {
-                return UICollectionViewCell()
-            }
+            let cell = collectionView.dequeueReusableCell(CategoryViewCellCollectionViewCell.self, indexPath: indexPath)
             cell.setData(category: categories[indexPath.row])
             return cell
         } else {
-                guard let cell = collectionView.dequeueReusableCell(
-                        withReuseIdentifier: Constant.FavoriteCollectionViewConfig.cellWithReuseIdentifier,
-                    for: indexPath) as? FavoriteCollectionViewCell else {
-                    return UICollectionViewCell()
-                }
+            let cell = collectionView.dequeueReusableCell(FavoriteCollectionViewCell.self, indexPath: indexPath)
             cell.setData(cooktail: cooktails[indexPath.row])
             return cell
         }
