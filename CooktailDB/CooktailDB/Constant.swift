@@ -32,7 +32,7 @@ class Constant {
     struct FavoriteCollectionViewConfig {
         static let cornerRadius: CGFloat = 10
         static let imageConnerRadius: CGFloat = 50
-        static let cellSize = CGSize(width: 254, height: 430)
+        static let cellSize = CGSize(width: 300, height: 730)
         static let uiNibNameCell = "FavoriteCollectionViewCell"
         static let cellWithReuseIdentifier = "FavoriteCollectionViewCell"
     }
@@ -47,5 +47,12 @@ class Constant {
         static let detail = "DetailCooktailViewController"
         static let home = "HomeControllerView"
         static let list = "ListViewController"
+    }
+    struct CooktailListCell {
+        static let imageConnerRadius: CGFloat = 57
+        static let cellHeight: CGFloat = 200
+        static let insetSession = UIEdgeInsets(top: 18, left: 0, bottom: 0, right: 0)
+        static let itemPerRow: CGFloat = 2.0
+        static let defaultCellReusealble = "CooktailCollectionViewCell"
     }
 }
