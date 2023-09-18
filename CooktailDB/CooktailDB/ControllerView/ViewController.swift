@@ -58,7 +58,7 @@ final class ViewController: UIViewController {
                     self.favoriteCollectionView.reloadData()
                 }
             }, failureHandler: {
-                print("Error fetching API")
+                self.popUpErrorAlert(message: "Error fetching data")
             })
         for index in 0..<data.count {
              let getApiUrl = Constant.BaseUrl.getApiBaseUrl + "/"
@@ -83,7 +83,7 @@ final class ViewController: UIViewController {
                     self.categoryCollectionView.reloadData()
                 }
             }, failureHandler: {
-                print("Error fetching API")
+                self.popUpErrorAlert(message: "Error fetching data")
             })
         }
     }
@@ -177,7 +177,7 @@ extension ViewController: UISearchBarDelegate {
                     self.navigationController?.pushViewController(listView, animated: true)
                 }
             }, failureHandler: {
-                print("Error fetching API")
+                self.popUpErrorAlert(message: "Error fetching data")
             })
         }
     }
