@@ -123,7 +123,7 @@ extension ViewController: UICollectionViewDataSource {
         }
     }
 }
-extension ViewController: UICollectionViewDelegate {
+extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -133,6 +133,8 @@ extension ViewController: UICollectionViewDelegate {
             return Constant.FavoriteCollectionViewConfig.cellSize
         }
     }
+}
+extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == currentCollectionView {
             if let listView = storyboard?.instantiateViewController(

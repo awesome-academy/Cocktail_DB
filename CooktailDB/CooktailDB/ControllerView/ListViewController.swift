@@ -5,6 +5,7 @@ final class ListViewController: UIViewController {
     private var cooktails: [Cooktail]?
     private var categoryViewList: [Category]?
     private var cooktailViewList: [Cooktail]?
+    private var isCooktail = true
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var listViewCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -17,11 +18,19 @@ final class ListViewController: UIViewController {
             configCategoryView()
             print(target)
         } else if let cooktails = cooktails {
+           configCooktail()
             print(cooktails)
         }
     }
     private func configSearchBar() {
         searchBar.delegate = self
+    }
+    private func configCooktail() {
+        isCooktail = false
+        cooktailViewList = cooktails
+        listViewCollectionView.register(nibName: CooktailCollectionViewCell.self)
+        listViewCollectionView.delegate = self
+        listViewCollectionView.dataSource = self
     }
     private func configCategoryView() {
         categoryViewList = categories
@@ -40,16 +49,23 @@ extension ListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let categories = categoryViewList {
             return categories.count
+        } else if let cooktails = cooktailViewList {
+            return cooktails.count
         }
         return 0
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(CategoryViewCellCollectionViewCell.self, indexPath: indexPath)
         if let categories = categoryViewList {
+            let cell = collectionView.dequeueReusableCell(CategoryViewCellCollectionViewCell.self, indexPath: indexPath)
             cell.setData(category: categories[indexPath.row])
+            return cell
+        } else if let cooktails = cooktailViewList {
+            let cell = collectionView.dequeueReusableCell(CooktailCollectionViewCell.self, indexPath: indexPath)
+            cell.setData(cooktail: cooktails[indexPath.row])
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
 }
 extension ListViewController: UICollectionViewDelegate {
@@ -90,4 +106,12 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 extension ListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding = CGFloat((Constant.CooktailListCell.itemPerRow + 1)) + Constant.CooktailListCell.insetSession.left
+        let availableWidth = view.frame.width - padding
+        let width = availableWidth / Constant.CooktailListCell.itemPerRow
+        return CGSize(width: width, height: Constant.CooktailListCell.cellHeight)
+    }
 }
