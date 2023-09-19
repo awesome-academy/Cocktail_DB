@@ -55,4 +55,9 @@ class Constant {
         static let itemPerRow: CGFloat = 2.0
         static let defaultCellReusealble = "CooktailCollectionViewCell"
     }
+    struct DetailDefaultConfig {
+        static let cornerRadius: CGFloat = 10
+        static let imageCornerRadius: CGFloat = 103
+        static let connerCornerRadius: CGFloat = 65
+    }
 }
