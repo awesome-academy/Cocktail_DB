@@ -13,12 +13,10 @@ final class ListViewController: UIViewController {
         configSearchBar()
     }
     private func configController() {
-        if let target = categories {
+        if categories != nil {
             configCategoryView()
-            print(target)
-        } else if let cooktails = cooktails {
+        } else if cooktails != nil {
            configCooktail()
-            print(cooktails)
         }
     }
     private func configSearchBar() {
@@ -68,11 +66,29 @@ extension ListViewController: UICollectionViewDataSource {
 }
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cooktails = cooktails {
-            print(cooktails)
-            if let detailView = storyboard?.instantiateViewController(
-                withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
-            self.navigationController?.pushViewController(detailView, animated: true)
+        let toPath = "i="
+        guard let cooktailId = cooktailViewList?[indexPath.row].cooktailId else { return }
+        let url = Constant.BaseUrl.getApiBaseUrl + "/"
+            + Constant.RelativeUrl.getApiRelativeUrl
+            + Constant.Endpoint.lookUp + toPath
+            + cooktailId
+            if let cooktails = cooktails {
+                print(cooktails)
+                if let detailView = storyboard?.instantiateViewController(
+                  withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
+                    APIManager.shared.request(url: url,
+                                              type: Cooktails.self,
+                                              completionHandler: { [weak self] cooktails in
+                    guard let cooktails = cooktails.cooktails?[0] else { return }
+                    detailView.setCooktail(cooktail: cooktails)
+                    DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.navigationController?.pushViewController(detailView, animated: true)
+                    }
+                  }, failureHandler: {
+                  self.popUpErrorAlert(message: "Error fetching data")
+                })
+              }
         } else if let categoryViewList = categoryViewList {
             let toPath = "c="
             guard let categoryName = categoryViewList[indexPath.row].categoryName else { return }
