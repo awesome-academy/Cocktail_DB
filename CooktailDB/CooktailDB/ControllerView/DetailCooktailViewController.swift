@@ -14,44 +14,64 @@ final class DetailCooktailViewController: UIViewController {
         super.viewDidLoad()
         ingrediantSetting()
         config()
+        configContent()
     }
     private func config() {
         ingrediantCollectionView.register(nibName: IngrediantCollectionViewCell.self)
         ingrediantCollectionView.dataSource = self
-        self.navigationController?.title = cooktail?.cooktailName
+        self.title = cooktail?.cooktailName
         if let layout = ingrediantCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
         backgroundView.layer.cornerRadius = Constant.DetailDefaultConfig.cornerRadius
         cooktailImage.layer.cornerRadius = Constant.DetailDefaultConfig.imageCornerRadius
+        cooktailImage.layer.borderWidth = Constant.DetailDefaultConfig.imageBorderWidth
+        cooktailImage.layer.borderColor = Constant.DetailDefaultConfig.imageBorderColor
         connerView.layer.cornerRadius = Constant.DetailDefaultConfig.connerCornerRadius
     }
     private func ingrediantSetting() {
-        // TODO: Ingredient get data from cooktail
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Gin",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Vodka",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Gin",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Gin",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Gin",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
-        ingrediants.append(Ingredient(ingredientId: "1",
-                                       ingredientName: "Gin",
-                                       ingredientMeansure: "1 shot",
-                                       ingredientDescription: "nothing"))
+        var index = 0
+        if let ingredientNameList = cooktail?.ingredientNames,
+           var ingrediantMeansureList = cooktail?.ingredientMeansure {
+            while index < ingredientNameList.count {
+                if index >= ingrediantMeansureList.count {
+                    ingrediantMeansureList.append("some")
+                }
+                ingrediants.append(
+                    Ingredient(ingredientId: "\(index)",
+                               ingredientName: ingredientNameList[index],
+                               ingredientMeansure: ingrediantMeansureList[index],
+                               ingredientDescription: "nothing"))
+                if index < ingrediantMeansureList.count {
+                    index += 1
+                } else {
+                    break
+                }
+            }
+        }
+    }
+    private func configContent() {
+        guard let cooktailImage = cooktail?.cooktailImage else { return }
+        let safeUrl = cooktailImage + Constant.Option.getSmallImage
+        APIManager.shared.getImg(url: safeUrl) { [weak self] image in
+            guard let self = self else { return }
+            self.cooktailImage.image = image
+        }
+        categoryLabel.text = cooktail?.cooktailCategory
+        alcoholicLabel.text = cooktail?.cooktailAlcoholic
+        var ingrediantString = ""
+        guard let ingrediants = cooktail?.ingredientNames else { return }
+        for index in (0..<ingrediants.count) {
+            ingrediantString += ingrediants[index]
+            if index == ingrediants.count - 1 {
+                break
+            }
+            ingrediantString += " and "
+        }
+        cooktailDescriptionLabel.text =
+            "\(cooktail?.cooktailName ?? "") is " +
+            "\(cooktail?.cooktailAlcoholic ?? "") cooktail with "
+            + ingrediantString
     }
     func setCooktail(cooktail: Cooktail) {
         self.cooktail = cooktail
@@ -70,7 +90,6 @@ extension DetailCooktailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(IngrediantCollectionViewCell.self, indexPath: indexPath)
-        print(ingrediants[indexPath.row])
         cell.configIngredient(ingrediant: ingrediants[indexPath.row])
         return cell
     }

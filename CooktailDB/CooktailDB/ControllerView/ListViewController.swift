@@ -72,8 +72,7 @@ extension ListViewController: UICollectionViewDelegate {
             + Constant.RelativeUrl.getApiRelativeUrl
             + Constant.Endpoint.lookUp + toPath
             + cooktailId
-            if let cooktails = cooktails {
-                print(cooktails)
+        if cooktails != nil {
                 if let detailView = storyboard?.instantiateViewController(
                   withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
                     APIManager.shared.request(url: url,
