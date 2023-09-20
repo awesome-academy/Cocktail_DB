@@ -10,6 +10,8 @@
 		BB1A71072AB8264C0018FADC /* CooktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A71052AB8264C0018FADC /* CooktailCollectionViewCell.swift */; };
 		BB1A71082AB8264C0018FADC /* CooktailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A71062AB8264C0018FADC /* CooktailCollectionViewCell.xib */; };
 		BB1A710A2AB930080018FADC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A71092AB930080018FADC /* UIViewController+.swift */; };
+		BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */; };
+		BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */; };
 		BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */; };
 		BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */; };
 		BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		BB1A71052AB8264C0018FADC /* CooktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooktailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB1A71062AB8264C0018FADC /* CooktailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CooktailCollectionViewCell.xib; sourceTree = "<group>"; };
 		BB1A71092AB930080018FADC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrediantCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngrediantCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBB676EB2AAFFE6A00CCBEF6 /* CooktailDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooktailDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				BBB6771C2AB1905200CCBEF6 /* FavoriteCollectionViewCell.xib */,
 				BB1A71052AB8264C0018FADC /* CooktailCollectionViewCell.swift */,
 				BB1A71062AB8264C0018FADC /* CooktailCollectionViewCell.xib */,
+				BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */,
+				BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */,
 			);
 			path = ReuseableCell;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1A71082AB8264C0018FADC /* CooktailCollectionViewCell.xib in Resources */,
+				BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */,
 				BBB676FB2AAFFE6F00CCBEF6 /* LaunchScreen.storyboard in Resources */,
 				BBB676F82AAFFE6F00CCBEF6 /* Assets.xcassets in Resources */,
 				BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */,
@@ -256,6 +263,7 @@
 				BBB6772D2AB41AD800CCBEF6 /* UICollectionView+.swift in Sources */,
 				BBB677172AB167C400CCBEF6 /* CategoryViewCellCollectionViewCell.swift in Sources */,
 				BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */,
+				BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */,
 				BBB6771A2AB18B0D00CCBEF6 /* Color_Extension.swift in Sources */,
 				BBB677222AB2B63C00CCBEF6 /* ListViewController.swift in Sources */,
 				BBB6772A2AB4179900CCBEF6 /* ReusableView.swift in Sources */,

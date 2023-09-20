@@ -6,7 +6,7 @@ class Constant {
     }
     struct RelativeUrl {
         static let getApiRelativeUrl = "/api/json/v1/1/"
-        static let getImageIngredientRelativeUrl = "images"
+        static let getImageIngredientRelativeUrl = "images/ingredients"
     }
     struct Endpoint {
         static let search = "search.php?"
@@ -14,7 +14,6 @@ class Constant {
         static let popular = "popular.php"
         static let random = "random.php"
         static let filter = "filter.php?"
-        static let getIngredientsImage = "ingredients"
     }
     struct Category {
         static let popular = "Cocktail"
@@ -59,5 +58,10 @@ class Constant {
         static let cornerRadius: CGFloat = 10
         static let imageCornerRadius: CGFloat = 103
         static let connerCornerRadius: CGFloat = 65
+    }
+    struct IngrediantCollectionViewCellConfig {
+        static let cellWithReuseIdentifier = "IngrediantCollectionViewCell"
+        static let backgroundCornerRadius: CGFloat = 40
+        static let imageCornerRadius: CGFloat = 10
     }
 }
