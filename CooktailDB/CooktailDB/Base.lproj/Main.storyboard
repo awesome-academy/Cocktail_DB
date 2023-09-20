@@ -201,7 +201,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="l" id="Kry-bB-oTb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="l" reuseIdentifier="ListViewCell" id="Kry-bB-oTb">
                                         <rect key="frame" x="94" y="0.0" width="186" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fpb-VR-GjX">
@@ -263,27 +263,9 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJA-95-4BA">
                                         <rect key="frame" x="-56" y="311" width="241" height="118"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-zW-HRy">
-                                                <rect key="frame" x="64" y="86" width="167" height="28"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="l0g-zW-HRy" secondAttribute="height" multiplier="159:37" constant="46.675675675675677" id="FfO-cJ-8ps"/>
-                                                    <constraint firstAttribute="width" secondItem="l0g-zW-HRy" secondAttribute="height" multiplier="127:39" constant="75.820512820512818" id="u9Z-Hc-16z"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="tintColor" systemColor="systemRedColor"/>
-                                                <state key="normal" title="Instruction &gt;" image="dot.square" catalog="system">
-                                                    <color key="titleColor" systemColor="secondaryLabelColor"/>
-                                                    <color key="titleShadowColor" red="0.91004246473312378" green="0.45755285024642944" blue="0.44049274921417236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="l0g-zW-HRy" secondAttribute="trailing" constant="10" id="43V-xH-IPb"/>
-                                            <constraint firstAttribute="bottom" secondItem="l0g-zW-HRy" secondAttribute="bottom" constant="4" id="CjF-rr-E1u"/>
                                             <constraint firstAttribute="width" secondItem="UJA-95-4BA" secondAttribute="height" multiplier="195:112" constant="35.553571428571416" id="Jps-ve-82D"/>
-                                            <constraint firstItem="l0g-zW-HRy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UJA-95-4BA" secondAttribute="leading" constant="20" symbolic="YES" id="eJm-T0-k80"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcoholic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qj7-Ei-aZU">
@@ -341,7 +323,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xfw-BZ-Ib5">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngrediantCollectionViewCell" id="Xfw-BZ-Ib5">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xxL-oz-oXi">
@@ -352,15 +334,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsZ-9G-T1t">
+                                <rect key="frame" x="20" y="506" width="130" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dsZ-9G-T1t" secondAttribute="height" multiplier="10:3" id="Prt-Dg-5MJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Instructions &gt;">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="instructionButtonTouchUp:" destination="AcT-UM-A16" eventType="touchUpInside" id="gUp-xA-cK9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lTO-EN-5g2"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dsZ-9G-T1t" firstAttribute="leading" secondItem="lTO-EN-5g2" secondAttribute="leading" constant="20" id="3C9-Wd-R2X"/>
+                            <constraint firstItem="dsZ-9G-T1t" firstAttribute="top" secondItem="Q96-7N-MN8" secondAttribute="bottom" constant="18" id="8of-A3-YvI"/>
                             <constraint firstItem="VAd-lf-Hij" firstAttribute="leading" secondItem="lTO-EN-5g2" secondAttribute="leading" constant="20" id="HLI-AX-YP8"/>
+                            <constraint firstItem="lTO-EN-5g2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dsZ-9G-T1t" secondAttribute="trailing" symbolic="YES" id="IEU-Ld-344"/>
                             <constraint firstItem="lTO-EN-5g2" firstAttribute="trailing" secondItem="VAd-lf-Hij" secondAttribute="trailing" constant="20" id="KWG-fa-MiE"/>
                             <constraint firstItem="VAd-lf-Hij" firstAttribute="top" secondItem="Q96-7N-MN8" secondAttribute="bottom" constant="73" id="MkA-cw-FY7"/>
                             <constraint firstItem="Q96-7N-MN8" firstAttribute="top" secondItem="lTO-EN-5g2" secondAttribute="top" constant="30" id="aKG-D3-rpa"/>
+                            <constraint firstItem="VAd-lf-Hij" firstAttribute="top" secondItem="dsZ-9G-T1t" secondAttribute="bottom" constant="16" id="d4L-nM-i1t"/>
                             <constraint firstItem="Q96-7N-MN8" firstAttribute="leading" secondItem="lTO-EN-5g2" secondAttribute="leading" id="dGI-Vl-V9B"/>
                             <constraint firstAttribute="bottom" secondItem="VAd-lf-Hij" secondAttribute="bottom" constant="47" id="kIm-25-gaU"/>
                             <constraint firstItem="Q96-7N-MN8" firstAttribute="trailing" secondItem="lTO-EN-5g2" secondAttribute="trailing" id="vgK-i8-vA8"/>
@@ -375,11 +374,28 @@
                         <outlet property="cooktailDescriptionLabel" destination="oHB-Ma-cNd" id="hyr-sO-bni"/>
                         <outlet property="cooktailImage" destination="TO8-CK-m2C" id="m33-yl-fnu"/>
                         <outlet property="ingrediantCollectionView" destination="VAd-lf-Hij" id="lgQ-eg-Z09"/>
+                        <segue destination="0zY-7l-g2r" kind="show" identifier="InstructionBackToDetail" id="GEl-Y0-rHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9S-tx-2yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1198.5507246376812" y="831.69642857142856"/>
+        </scene>
+        <!--Intruction View Controller-->
+        <scene sceneID="b4G-B8-1gQ">
+            <objects>
+                <viewController storyboardIdentifier="InstructionControllerView" id="0zY-7l-g2r" customClass="IntructionViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="InstructionControllerView" id="dXH-zM-i4e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Ch-5t-aju"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BFO-Cg-ugf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUl-ej-VR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941" y="832"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRS-54-HBT">
@@ -402,18 +418,11 @@
     </scenes>
     <resources>
         <image name="Coffee_Tea" width="1500" height="996"/>
-        <image name="dot.square" catalog="system" width="128" height="114"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
