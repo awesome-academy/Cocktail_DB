@@ -12,6 +12,7 @@
 		BB1A710A2AB930080018FADC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A71092AB930080018FADC /* UIViewController+.swift */; };
 		BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */; };
 		BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */; };
+		BB81E3722ABAD6DB00103F5B /* IntructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */; };
 		BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */; };
 		BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */; };
 		BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		BB1A71092AB930080018FADC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrediantCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngrediantCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntructionViewController.swift; sourceTree = "<group>"; };
 		BBB676EB2AAFFE6A00CCBEF6 /* CooktailDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooktailDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */,
 				BBB677212AB2B63B00CCBEF6 /* ListViewController.swift */,
 				BBB677232AB2B69100CCBEF6 /* DetailCooktailViewController.swift */,
+				BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */,
 			);
 			path = ControllerView;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */,
 				BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */,
 				BBB6771A2AB18B0D00CCBEF6 /* Color_Extension.swift in Sources */,
+				BB81E3722ABAD6DB00103F5B /* IntructionViewController.swift in Sources */,
 				BBB677222AB2B63C00CCBEF6 /* ListViewController.swift in Sources */,
 				BBB6772A2AB4179900CCBEF6 /* ReusableView.swift in Sources */,
 				BB1A710A2AB930080018FADC /* UIViewController+.swift in Sources */,

@@ -46,6 +46,7 @@ class Constant {
         static let detail = "DetailCooktailViewController"
         static let home = "HomeControllerView"
         static let list = "ListViewController"
+        static let instruction = "InstructionControllerView"
     }
     struct CooktailListCell {
         static let imageConnerRadius: CGFloat = 57

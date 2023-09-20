@@ -27,6 +27,7 @@ final class DetailCooktailViewController: UIViewController {
         connerView.layer.cornerRadius = Constant.DetailDefaultConfig.connerCornerRadius
     }
     private func ingrediantSetting() {
+        // TODO: Ingredient get data from cooktail
         ingrediants.append(Ingredient(ingredientId: "1",
                                        ingredientName: "Gin",
                                        ingredientMeansure: "1 shot",
@@ -55,6 +56,12 @@ final class DetailCooktailViewController: UIViewController {
     func setCooktail(cooktail: Cooktail) {
         self.cooktail = cooktail
     }
+    @IBAction private func instructionButtonTouchUp (_ sender: Any) {
+        if let instructionView = storyboard?.instantiateViewController(
+            withIdentifier: Constant.ControllerView.instruction) {
+            self.navigationController?.pushViewController(instructionView, animated: true)
+        }
+    }
 }
 extension DetailCooktailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,7 +71,7 @@ extension DetailCooktailViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(IngrediantCollectionViewCell.self, indexPath: indexPath)
         print(ingrediants[indexPath.row])
-        cell.setData(ingrediant: ingrediants[indexPath.row])
+        cell.configIngredient(ingrediant: ingrediants[indexPath.row])
         return cell
     }
 }

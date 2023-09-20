@@ -1,6 +1,6 @@
 import UIKit
 
-class CooktailCollectionViewCell: UICollectionViewCell, ReusableView {
+final class CooktailCollectionViewCell: UICollectionViewCell, ReusableView {
     static var defaultReuseIdentifier = Constant.CooktailListCell.defaultCellReusealble
     @IBOutlet private weak var cooktailImage: UIImageView!
     @IBOutlet private weak var cooktailName: UILabel!
