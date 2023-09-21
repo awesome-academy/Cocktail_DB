@@ -42,6 +42,12 @@ struct Cooktail: Decodable {
             return nil
         }
     }
+    init(cooktails: CooktailData) {
+        cooktailName = cooktails.cooktailName
+        cooktailId = cooktails.cooktailId
+        cooktailImage = cooktails.cooktailImage
+        cooktailCategory = cooktails.cooktailCategory
+    }
 }
 
 struct Cooktails: Decodable {

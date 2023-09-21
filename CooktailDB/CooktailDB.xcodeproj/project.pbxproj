@@ -13,6 +13,9 @@
 		BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */; };
 		BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */; };
 		BB81E3722ABAD6DB00103F5B /* IntructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */; };
+		BB81E3762ABC303000103F5B /* CooktailDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3742ABC302E00103F5B /* CooktailDB.xcdatamodeld */; };
+		BB81E3782ABC318400103F5B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3772ABC318400103F5B /* DatabaseManager.swift */; };
+		BB81E37A2ABC32C800103F5B /*  CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3792ABC32C800103F5B /*  CoreDataManager.swift */; };
 		BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */; };
 		BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */; };
 		BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrediantCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngrediantCollectionViewCell.xib; sourceTree = "<group>"; };
 		BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntructionViewController.swift; sourceTree = "<group>"; };
+		BB81E3752ABC302F00103F5B /* CooktailDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CooktailDB.xcdatamodel; sourceTree = "<group>"; };
+		BB81E3772ABC318400103F5B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BB81E3792ABC32C800103F5B /*  CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CoreDataManager.swift"; sourceTree = "<group>"; };
 		BBB676EB2AAFFE6A00CCBEF6 /* CooktailDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooktailDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB81E3732ABC300F00103F5B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BB81E3742ABC302E00103F5B /* CooktailDB.xcdatamodeld */,
+				BB81E3772ABC318400103F5B /* DatabaseManager.swift */,
+				BB81E3792ABC32C800103F5B /*  CoreDataManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		BBB676E22AAFFE6A00CCBEF6 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +110,7 @@
 		BBB676ED2AAFFE6A00CCBEF6 /* CooktailDB */ = {
 			isa = PBXGroup;
 			children = (
+				BB81E3732ABC300F00103F5B /* Database */,
 				BBB6772B2AB41AA500CCBEF6 /* Extension */,
 				BBB677142AB1678800CCBEF6 /* ReuseableCell */,
 				BBB677092AB0186D00CCBEF6 /* API */,
@@ -261,6 +278,7 @@
 			files = (
 				BBB6770B2AB0188100CCBEF6 /* APIManager.swift in Sources */,
 				BB1A71072AB8264C0018FADC /* CooktailCollectionViewCell.swift in Sources */,
+				BB81E3762ABC303000103F5B /* CooktailDB.xcdatamodeld in Sources */,
 				BBB677242AB2B69100CCBEF6 /* DetailCooktailViewController.swift in Sources */,
 				BBB677202AB2A50100CCBEF6 /* Category.swift in Sources */,
 				BBB6772D2AB41AD800CCBEF6 /* UICollectionView+.swift in Sources */,
@@ -269,7 +287,9 @@
 				BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */,
 				BBB6771A2AB18B0D00CCBEF6 /* Color_Extension.swift in Sources */,
 				BB81E3722ABAD6DB00103F5B /* IntructionViewController.swift in Sources */,
+				BB81E37A2ABC32C800103F5B /*  CoreDataManager.swift in Sources */,
 				BBB677222AB2B63C00CCBEF6 /* ListViewController.swift in Sources */,
+				BB81E3782ABC318400103F5B /* DatabaseManager.swift in Sources */,
 				BBB6772A2AB4179900CCBEF6 /* ReusableView.swift in Sources */,
 				BB1A710A2AB930080018FADC /* UIViewController+.swift in Sources */,
 				BBB6771D2AB1905200CCBEF6 /* FavoriteCollectionViewCell.swift in Sources */,
@@ -476,6 +496,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB81E3742ABC302E00103F5B /* CooktailDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB81E3752ABC302F00103F5B /* CooktailDB.xcdatamodel */,
+			);
+			currentVersion = BB81E3752ABC302F00103F5B /* CooktailDB.xcdatamodel */;
+			path = CooktailDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BBB676E32AAFFE6A00CCBEF6 /* Project object */;
 }

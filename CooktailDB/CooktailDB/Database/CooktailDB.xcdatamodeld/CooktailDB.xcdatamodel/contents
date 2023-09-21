@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G1351" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="CooktailDB">
+    <entity name="CooktailData" representedClassName="CooktailData" syncable="YES" codeGenerationType="class">
+        <attribute name="cooktailCategory" optional="YES" attributeType="String"/>
+        <attribute name="cooktailId" optional="YES" attributeType="String"/>
+        <attribute name="cooktailImage" optional="YES" attributeType="String"/>
+        <attribute name="cooktailName" optional="YES" attributeType="String"/>
+    </entity>
+    <fetchRequest name="fetchRequest" entity="CooktailData"/>
+    <elements>
+        <element name="CooktailData" positionX="-63" positionY="-18" width="128" height="89"/>
+    </elements>
+</model>
