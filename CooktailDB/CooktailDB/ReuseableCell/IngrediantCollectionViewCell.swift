@@ -19,7 +19,7 @@ final class IngrediantCollectionViewCell: UICollectionViewCell, ReusableView {
         let safeUrl = Constant.BaseUrl.getApiBaseUrl + "/"
             + Constant.RelativeUrl.getImageIngredientRelativeUrl + "/"
             + name + ".png"
-        APIManager.shared.getImg(url: safeUrl) { [weak self] image in
+        APIManager.shared.getImg(url: safeUrl.replacingOccurrences(of: " ", with: "%20")) { [weak self] image in
             guard let self = self else { return }
             self.ingrediantImage.image = image
         }

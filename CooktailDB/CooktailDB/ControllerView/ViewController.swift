@@ -64,7 +64,6 @@ final class ViewController: UIViewController {
              let getApiUrl = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
                 + Constant.Endpoint.filter + toPath + data[index]
-            print(getApiUrl)
             APIManager.shared.request(url: getApiUrl, type: Cooktails.self,
                                       completionHandler: { [weak self] cooktails in
                 guard let cooktails = cooktails.cooktails else { return }
@@ -150,9 +149,24 @@ extension ViewController: UICollectionViewDelegate {
                 self.navigationController?.pushViewController(listView, animated: true)
             }
         } else {
+            let toPath = "i="
+            guard let cooktailId = cooktails[indexPath.row].cooktailId else { return }
+            let url = Constant.BaseUrl.getApiBaseUrl + "/"
+                + Constant.RelativeUrl.getApiRelativeUrl
+                + Constant.Endpoint.lookUp + toPath
+                + cooktailId
             if let detailView = storyboard?.instantiateViewController(
-                withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
-                self.navigationController?.pushViewController(detailView, animated: true)
+                      withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
+                APIManager.shared.request(url: url, type: Cooktails.self,
+                                    completionHandler: { [weak self] cooktails in
+                        guard let cooktails = cooktails.cooktails?[0] else { return }
+                        detailView.setCooktail(cooktail: cooktails)
+                        DispatchQueue.main.async { [weak self] in
+                            self?.navigationController?.pushViewController(detailView, animated: true)
+                        }
+                    }, failureHandler: {
+                        self.popUpErrorAlert(message: "Error fetching data")
+                })
             }
         }
     }
@@ -169,16 +183,16 @@ extension ViewController: UISearchBarDelegate {
             + Constant.Endpoint.search + toPath + text
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
-            APIManager.shared.request(url: url, type: Cooktails.self, completionHandler: { [weak self] cooktails in
+            APIManager.shared.request(url: url, type: Cooktails.self,
+                                      completionHandler: { [weak self]cooktails in
                 guard let cooktails = cooktails.cooktails else { return }
                 listView.setCooktails(cooktails: cooktails)
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.navigationController?.pushViewController(listView, animated: true)
                 }
-            }, failureHandler: {
-                self.popUpErrorAlert(message: "Error fetching data")
-            })
+              }, failureHandler: { self.popUpErrorAlert(message: "Error fetching data") }
+            )
         }
     }
 }

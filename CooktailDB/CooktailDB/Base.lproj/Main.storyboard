@@ -246,17 +246,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q96-7N-MN8">
                                 <rect key="frame" x="0.0" y="118" width="414" height="370"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsx-kn-Q6o">
-                                        <rect key="frame" x="206" y="103" width="158" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="aws-2W-vU2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <color key="textColor" red="0.19611114263534546" green="0.092138148844242096" blue="0.047891117632389069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="155 Belmont is Alcoholic cooktail ingredient have Dark rum, light rum, Vodka and Orange juice" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-Ma-cNd">
-                                        <rect key="frame" x="20" y="33" width="374" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="155 Belmont is Alcoholic cooktail ingredient have Dark rum, light rum, Vodka and Orange juice" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-Ma-cNd">
+                                        <rect key="frame" x="20" y="19" width="374" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -269,24 +260,33 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcoholic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qj7-Ei-aZU">
-                                        <rect key="frame" x="20" y="231" width="122.5" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                        <rect key="frame" x="20" y="231" width="88.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" red="0.65805327892303467" green="0.56742537021636963" blue="0.9196171760559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coffee_Tea" translatesAutoresizingMaskIntoConstraints="NO" id="TO8-CK-m2C">
-                                        <rect key="frame" x="172" y="157" width="266" height="272"/>
+                                        <rect key="frame" x="172" y="192" width="242" height="237"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.85126680135726929" green="0.91407579183578491" blue="0.48810553550720215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="272" id="3UD-vx-wgz"/>
-                                            <constraint firstAttribute="width" secondItem="TO8-CK-m2C" secondAttribute="height" multiplier="271:295" constant="16.128813559322055" id="agZ-h1-Z0m"/>
+                                            <constraint firstAttribute="height" constant="237" id="3UD-vx-wgz"/>
+                                            <constraint firstAttribute="width" secondItem="TO8-CK-m2C" secondAttribute="height" multiplier="271:295" constant="24.281355932203411" id="agZ-h1-Z0m"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooktail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2b-7e-wNC">
-                                        <rect key="frame" x="20" y="147" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="121" width="374" height="43"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
                                         <color key="textColor" red="0.20018517971038818" green="0.12458505481481552" blue="0.049247555434703827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsx-kn-Q6o">
+                                        <rect key="frame" x="181" y="68" width="158" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="aws-2W-vU2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" red="0.19611114263534546" green="0.092138148844242096" blue="0.047891117632389069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -294,21 +294,22 @@
                                 <constraints>
                                     <constraint firstItem="UJA-95-4BA" firstAttribute="top" secondItem="Q96-7N-MN8" secondAttribute="bottom" constant="-59" id="5tK-py-bu5"/>
                                     <constraint firstItem="qj7-Ei-aZU" firstAttribute="leading" secondItem="Q96-7N-MN8" secondAttribute="leading" constant="20" symbolic="YES" id="957-si-mQv"/>
-                                    <constraint firstItem="i2b-7e-wNC" firstAttribute="top" secondItem="qsx-kn-Q6o" secondAttribute="bottom" constant="8" id="Bgv-Qy-RH9"/>
+                                    <constraint firstItem="i2b-7e-wNC" firstAttribute="top" secondItem="qsx-kn-Q6o" secondAttribute="bottom" constant="-2" id="Bgv-Qy-RH9"/>
                                     <constraint firstItem="qsx-kn-Q6o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q96-7N-MN8" secondAttribute="leading" constant="20" symbolic="YES" id="FYf-oH-rXN"/>
                                     <constraint firstAttribute="trailing" secondItem="oHB-Ma-cNd" secondAttribute="trailing" constant="20" id="K1y-2b-7yY"/>
-                                    <constraint firstItem="TO8-CK-m2C" firstAttribute="top" secondItem="qsx-kn-Q6o" secondAttribute="bottom" constant="18" id="K36-nN-ofI"/>
-                                    <constraint firstItem="oHB-Ma-cNd" firstAttribute="top" secondItem="Q96-7N-MN8" secondAttribute="top" constant="33" id="Pfz-hz-csJ"/>
+                                    <constraint firstItem="TO8-CK-m2C" firstAttribute="top" secondItem="qsx-kn-Q6o" secondAttribute="bottom" constant="69" id="K36-nN-ofI"/>
+                                    <constraint firstItem="oHB-Ma-cNd" firstAttribute="top" secondItem="Q96-7N-MN8" secondAttribute="top" constant="19" id="Pfz-hz-csJ"/>
                                     <constraint firstAttribute="trailing" secondItem="i2b-7e-wNC" secondAttribute="trailing" constant="20" id="SLS-RE-tf3"/>
                                     <constraint firstAttribute="bottom" secondItem="TO8-CK-m2C" secondAttribute="bottom" constant="-59" id="XE5-Rq-dzw"/>
-                                    <constraint firstItem="TO8-CK-m2C" firstAttribute="top" secondItem="i2b-7e-wNC" secondAttribute="bottom" constant="-40" id="XPw-vW-M25"/>
-                                    <constraint firstAttribute="trailing" secondItem="qsx-kn-Q6o" secondAttribute="trailing" constant="50" id="Xae-qp-75C"/>
+                                    <constraint firstItem="TO8-CK-m2C" firstAttribute="top" secondItem="i2b-7e-wNC" secondAttribute="bottom" constant="28" id="XPw-vW-M25"/>
+                                    <constraint firstAttribute="trailing" secondItem="qsx-kn-Q6o" secondAttribute="trailing" constant="75" id="Xae-qp-75C"/>
                                     <constraint firstItem="TO8-CK-m2C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qj7-Ei-aZU" secondAttribute="trailing" constant="8" symbolic="YES" id="ZgQ-zt-eIV"/>
                                     <constraint firstItem="i2b-7e-wNC" firstAttribute="leading" secondItem="Q96-7N-MN8" secondAttribute="leading" constant="20" id="bg3-q1-c9c"/>
-                                    <constraint firstItem="qj7-Ei-aZU" firstAttribute="top" secondItem="i2b-7e-wNC" secondAttribute="bottom" constant="34" id="bzB-IQ-kt4"/>
-                                    <constraint firstAttribute="trailing" secondItem="TO8-CK-m2C" secondAttribute="trailing" constant="-24" id="eZT-7R-aiZ"/>
+                                    <constraint firstItem="qj7-Ei-aZU" firstAttribute="top" secondItem="i2b-7e-wNC" secondAttribute="bottom" constant="67" id="bzB-IQ-kt4"/>
+                                    <constraint firstAttribute="trailing" secondItem="TO8-CK-m2C" secondAttribute="trailing" id="eZT-7R-aiZ"/>
                                     <constraint firstItem="UJA-95-4BA" firstAttribute="bottom" secondItem="TO8-CK-m2C" secondAttribute="bottom" id="fAU-1y-GzB"/>
                                     <constraint firstAttribute="width" secondItem="Q96-7N-MN8" secondAttribute="height" multiplier="414:425" constant="53.576470588235281" id="gsv-9M-gGF"/>
+                                    <constraint firstItem="qsx-kn-Q6o" firstAttribute="top" secondItem="oHB-Ma-cNd" secondAttribute="bottom" constant="8" id="hvu-wD-QUo"/>
                                     <constraint firstItem="UJA-95-4BA" firstAttribute="leading" secondItem="Q96-7N-MN8" secondAttribute="leadingMargin" constant="-64" id="shJ-NG-Aar"/>
                                     <constraint firstItem="oHB-Ma-cNd" firstAttribute="leading" secondItem="Q96-7N-MN8" secondAttribute="leading" constant="20" id="xRD-jc-9cW"/>
                                 </constraints>

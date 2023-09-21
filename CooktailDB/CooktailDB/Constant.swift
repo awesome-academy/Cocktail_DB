@@ -15,6 +15,9 @@ class Constant {
         static let random = "random.php"
         static let filter = "filter.php?"
     }
+    struct Option {
+        static let getSmallImage = "/preview"
+    }
     struct Category {
         static let popular = "Cocktail"
         static let ordinary = "Ordinary%20Drink"
@@ -56,6 +59,8 @@ class Constant {
         static let defaultCellReusealble = "CooktailCollectionViewCell"
     }
     struct DetailDefaultConfig {
+        static let imageBorderWidth: CGFloat = 5
+        static let imageBorderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
         static let cornerRadius: CGFloat = 10
         static let imageCornerRadius: CGFloat = 103
         static let connerCornerRadius: CGFloat = 65
