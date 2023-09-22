@@ -9,6 +9,9 @@ final class ViewController: UIViewController {
     private var ordinaryDrinkCooktail: [Cooktail] = []
     private var categories: [Category] = []
     private var cooktails: [Cooktail] = []
+    private var favoriteCooktails: [Cooktail] = []
+    private let database = DatabaseManager()
+    private var favoriteCooktailList: [CooktailData]?
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var favoriteCollectionView: UICollectionView!
     @IBOutlet private weak var categoryCollectionView: UICollectionView!
@@ -25,6 +28,14 @@ final class ViewController: UIViewController {
             return Category(categoryImage: image[index],
                             categoryName: data[index],
                             categoryNumber: index + 1)
+        }
+    }
+    private func fetchFavoriteCooktailDb() {
+        fetchDatabase()
+        if let favoriteList = favoriteCooktailList {
+            favoriteCooktails = (0..<favoriteList.count).map { index in
+                return Cooktail(cooktails: favoriteList[index])
+            }
         }
     }
     private func configSearchBar() {
@@ -45,21 +56,34 @@ final class ViewController: UIViewController {
         favoriteCollectionView.dataSource = self
         favoriteCollectionView.delegate = self
     }
+    private func fetchDatabase() {
+        do {
+            favoriteCooktailList = try database.context.fetch(database.fetchRequest)
+        } catch {
+            self.popUpErrorAlert(message: "Error fetch database")
+        }
+    }
     private func fetchCooktail() {
         let toPath = "c="
-        let url = Constant.BaseUrl.getApiBaseUrl + "/"
-            + Constant.RelativeUrl.getApiRelativeUrl
-            + Constant.Endpoint.filter + toPath + "Coffee%20%5C/%20Tea"
+        let numberOfRequests = 10
+        let dispatchGroup = DispatchGroup()
+        for _ in 0..<numberOfRequests {
+            let url = Constant.BaseUrl.getApiBaseUrl + "/"
+                + Constant.RelativeUrl.getApiRelativeUrl
+                + Constant.Endpoint.random
+            dispatchGroup.enter()
             APIManager.shared.request(url: url, type: Cooktails.self, completionHandler: { [weak self] cooktails in
                 guard let cooktails = cooktails.cooktails else { return }
-                self?.cooktails = cooktails
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    self.favoriteCollectionView.reloadData()
-                }
+                self?.cooktails.append(cooktails[0])
+                dispatchGroup.leave()
             }, failureHandler: {
                 self.popUpErrorAlert(message: "Error fetching data")
+                dispatchGroup.leave()
             })
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            self.favoriteCollectionView.reloadData()
+        }
         for index in 0..<data.count {
              let getApiUrl = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
@@ -94,9 +118,10 @@ final class ViewController: UIViewController {
         }
     }
     @IBAction private func favoriteSeeAllTouchUp(_ sender: Any) {
+        fetchFavoriteCooktailDb()
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
-            listView.setCooktails(cooktails: cooktails)
+            listView.setCooktails(cooktails: favoriteCooktails)
             self.navigationController?.pushViewController(listView, animated: true)
         }
     }
@@ -104,9 +129,9 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currentCollectionView {
-            return data.count
+            return min(5, data.count)
         } else {
-            return cooktails.count
+            return min(10, cooktails.count)
         }
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -143,8 +168,7 @@ extension ViewController: UICollectionViewDelegate {
                 case Constant.Category.ordinary: listView.setCooktails(cooktails: ordinaryDrinkCooktail)
                 case Constant.Category.coffeeTea: listView.setCooktails(cooktails: coffeeTea)
                 case Constant.Category.softSoda: listView.setCooktails(cooktails: softDrinkSoda)
-                default:
-                    listView.setCooktails(cooktails: cooktails)
+                default: break
                 }
                 self.navigationController?.pushViewController(listView, animated: true)
             }

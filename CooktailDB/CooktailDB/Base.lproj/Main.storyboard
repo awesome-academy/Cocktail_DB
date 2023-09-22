@@ -129,7 +129,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-gX-xIa">
-                                <rect key="frame" x="20" y="423" width="374" height="439"/>
+                                <rect key="frame" x="20" y="454" width="374" height="408"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P3J-Jk-w9U">
                                     <size key="itemSize" width="128" height="128"/>
@@ -139,6 +139,12 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Can you love " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXg-vh-HNb">
+                                <rect key="frame" x="20" y="417" width="374" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <color key="textColor" red="0.91083073616027832" green="0.37708777189254761" blue="0.35102277994155884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -146,18 +152,21 @@
                             <constraint firstItem="JUf-ix-0Wa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9D4-hp-ehA"/>
                             <constraint firstItem="kFr-zH-ilI" firstAttribute="leading" secondItem="tKH-Zl-8gd" secondAttribute="leading" id="E4p-2T-oLa"/>
                             <constraint firstItem="9fE-gX-xIa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H4R-3r-r84"/>
+                            <constraint firstItem="9fE-gX-xIa" firstAttribute="top" secondItem="pXg-vh-HNb" secondAttribute="bottom" constant="2" id="HRt-8K-5Cg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aff-u4-WF0" secondAttribute="trailing" constant="20" id="Lop-8b-3Lb"/>
                             <constraint firstItem="9fE-gX-xIa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OWE-2m-VgL"/>
+                            <constraint firstItem="pXg-vh-HNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R0D-uH-ZfQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pXg-vh-HNb" secondAttribute="trailing" constant="20" id="Rqv-F9-4E7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9fE-gX-xIa" secondAttribute="trailing" constant="20" id="T5J-LG-YUD"/>
                             <constraint firstItem="tKH-Zl-8gd" firstAttribute="top" secondItem="Aff-u4-WF0" secondAttribute="bottom" id="UHA-Z2-Fhv"/>
                             <constraint firstItem="QHZ-iR-Mx5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c5E-pO-Vu2"/>
+                            <constraint firstItem="pXg-vh-HNb" firstAttribute="top" secondItem="JUf-ix-0Wa" secondAttribute="bottom" constant="2" id="dHa-yL-hBA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKH-Zl-8gd" secondAttribute="trailing" constant="20" id="ekf-RF-W83"/>
                             <constraint firstItem="Aff-u4-WF0" firstAttribute="top" secondItem="QHZ-iR-Mx5" secondAttribute="bottom" id="h4d-mM-jRc"/>
                             <constraint firstItem="tKH-Zl-8gd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j42-re-sM0"/>
                             <constraint firstItem="kFr-zH-ilI" firstAttribute="trailing" secondItem="tKH-Zl-8gd" secondAttribute="trailing" id="mt5-CQ-hsP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JUf-ix-0Wa" secondAttribute="trailing" constant="20" id="pfI-hF-fuy"/>
                             <constraint firstItem="QHZ-iR-Mx5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qJc-lg-XEY"/>
-                            <constraint firstItem="9fE-gX-xIa" firstAttribute="top" secondItem="JUf-ix-0Wa" secondAttribute="bottom" constant="8" id="rVF-P8-aDg"/>
                             <constraint firstItem="JUf-ix-0Wa" firstAttribute="top" secondItem="kFr-zH-ilI" secondAttribute="bottom" constant="8" id="tZd-5b-dUZ"/>
                             <constraint firstItem="kFr-zH-ilI" firstAttribute="top" secondItem="Aff-u4-WF0" secondAttribute="bottom" constant="47" id="vjL-01-j7z"/>
                             <constraint firstItem="Aff-u4-WF0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vx8-Ck-nnr"/>
@@ -175,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="76"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="75.669642857142847"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="dFi-vs-GDV">

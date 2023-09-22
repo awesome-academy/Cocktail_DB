@@ -23,6 +23,7 @@ class Constant {
         static let ordinary = "Ordinary%20Drink"
         static let coffeeTea = "Coffee%20%5C/%20Tea"
         static let softSoda = "Soft%20Drink"
+        static let home = "Homemade%20Liqueur"
     }
     struct Alcoholic {
         static let nope = "Non_Alcoholic"
