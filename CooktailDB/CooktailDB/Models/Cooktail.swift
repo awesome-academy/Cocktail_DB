@@ -8,6 +8,7 @@ struct Cooktail: Decodable {
     var cooktailImage: String?
     var ingredientNames: [String]?
     var ingredientMeansure: [String]?
+    var instruction: String?
     enum CodingKeys: String, CodingKey {
         case cooktailId = "idDrink"
         case cooktailName = "strDrink"
@@ -20,6 +21,7 @@ struct Cooktail: Decodable {
         case strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,
              strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10,
              strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15
+        case instruction = "strInstructions"
     }
 
     init(from decoder: Decoder) throws {
@@ -29,13 +31,14 @@ struct Cooktail: Decodable {
         cooktailCategory = try container.decodeIfPresent(String.self, forKey: .cooktailCategory)
         cooktailAlcoholic = try container.decodeIfPresent(String.self, forKey: .cooktailAlcoholic)
         cooktailImage = try container.decodeIfPresent(String.self, forKey: .cooktailImage)
-        ingredientNames = (1...15).compactMap { index in
+        instruction = try container.decodeIfPresent(String.self, forKey: .instruction)
+        ingredientNames = (1...Constant.Ingrediant.ingrediantTotal).compactMap { index in
             if let key = CodingKeys(rawValue: "strIngredient\(index)") {
                 return try? container.decode(String.self, forKey: key)
             }
             return nil
         }
-        ingredientMeansure = (1...15).compactMap { index in
+        ingredientMeansure = (1...Constant.Ingrediant.ingrediantTotal).compactMap { index in
             if let key = CodingKeys(rawValue: "strMeasure\(index)") {
                 return try? container.decode(String.self, forKey: key)
             }

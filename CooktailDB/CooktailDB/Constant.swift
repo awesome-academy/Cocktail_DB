@@ -58,6 +58,9 @@ class Constant {
     struct Database {
         static let persistentContainer = "CooktailDB"
     }
+    struct Ingrediant {
+        static let ingrediantTotal = 15
+    }
     struct CooktailListCell {
         static let imageConnerRadius: CGFloat = 57
         static let cellHeight: CGFloat = 200

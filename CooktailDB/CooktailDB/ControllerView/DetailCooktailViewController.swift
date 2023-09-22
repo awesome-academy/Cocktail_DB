@@ -83,9 +83,10 @@ final class DetailCooktailViewController: UIViewController {
         }
     }
     private func updateFavouriteButton() {
-        favoriteCooktail != nil ?
-            favoriteButton.setImage(UIImage(systemName: Constant.FavoriteButton.fill), for: .normal) :
-            favoriteButton.setImage(UIImage(systemName: Constant.FavoriteButton.notFill), for: .normal)
+        let isFill = favoriteCooktail == nil
+        favoriteButton.setImage(UIImage(systemName: isFill ?
+                                            Constant.FavoriteButton.fill:
+                                            Constant.FavoriteButton.notFill), for: .normal)
     }
     func setCooktail(cooktail: Cooktail) {
         self.cooktail = cooktail
