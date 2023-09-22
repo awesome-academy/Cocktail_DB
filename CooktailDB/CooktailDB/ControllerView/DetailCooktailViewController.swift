@@ -93,7 +93,8 @@ final class DetailCooktailViewController: UIViewController {
     }
     @IBAction private func instructionButtonTouchUp (_ sender: Any) {
         if let instructionView = storyboard?.instantiateViewController(
-            withIdentifier: Constant.ControllerView.instruction) {
+            withIdentifier: Constant.ControllerView.instruction) as? IntructionViewController {
+            instructionView.configCooktail(cooktail: cooktail)
             self.navigationController?.pushViewController(instructionView, animated: true)
         }
     }
