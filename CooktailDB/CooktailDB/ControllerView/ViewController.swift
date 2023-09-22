@@ -129,9 +129,9 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currentCollectionView {
-            return min(5, data.count)
+            return min(Constant.LimitNumber.categoryCollectionHomeLimit, data.count)
         } else {
-            return min(10, cooktails.count)
+            return min(Constant.LimitNumber.cooktailCollectionHomeLimit, cooktails.count)
         }
     }
     func collectionView(_ collectionView: UICollectionView,

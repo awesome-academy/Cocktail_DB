@@ -25,6 +25,10 @@ class Constant {
         static let softSoda = "Soft%20Drink"
         static let home = "Homemade%20Liqueur"
     }
+    struct LimitNumber {
+        static let categoryCollectionHomeLimit = 5
+        static let cooktailCollectionHomeLimit = 10
+    }
     struct Alcoholic {
         static let nope = "Non_Alcoholic"
         static let yes = "Alcoholic"
