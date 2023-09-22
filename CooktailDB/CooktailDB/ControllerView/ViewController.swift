@@ -86,14 +86,14 @@ final class ViewController: UIViewController {
             })
         }
     }
-    @IBAction func categorySeeAllTouchUp(_ sender: Any) {
+    @IBAction private func categorySeeAllTouchUp(_ sender: Any) {
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
             listView.setCategories(categories: categories)
             self.navigationController?.pushViewController(listView, animated: true)
         }
     }
-    @IBAction func favoriteSeeAllTouchUp(_ sender: Any) {
+    @IBAction private func favoriteSeeAllTouchUp(_ sender: Any) {
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
             listView.setCooktails(cooktails: cooktails)

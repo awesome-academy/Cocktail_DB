@@ -7,9 +7,12 @@ final class DetailCooktailViewController: UIViewController {
     @IBOutlet private weak var alcoholicLabel: UILabel!
     @IBOutlet private weak var cooktailImage: UIImageView!
     @IBOutlet private weak var connerView: UIView!
+    @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private weak var ingrediantCollectionView: UICollectionView!
     private var cooktail: Cooktail?
     private var ingrediants: [Ingredient] = []
+    private let database = DatabaseManager()
+    private var favoriteCooktail: CooktailData?
     override func viewDidLoad() {
         super.viewDidLoad()
         ingrediantSetting()
@@ -72,6 +75,17 @@ final class DetailCooktailViewController: UIViewController {
             "\(cooktail?.cooktailName ?? "") is " +
             "\(cooktail?.cooktailAlcoholic ?? "") cooktail with "
             + ingrediantString
+        if let cooktail = cooktail {
+            favoriteCooktail = database.checkFavorite(cooktailTarget: cooktail)
+        }
+        if let _ = favoriteCooktail {
+            updateFavouriteButton()
+        }
+    }
+    private func updateFavouriteButton() {
+        favoriteCooktail != nil ?
+            favoriteButton.setImage(UIImage(systemName: Constant.FavoriteButton.fill), for: .normal) :
+            favoriteButton.setImage(UIImage(systemName: Constant.FavoriteButton.notFill), for: .normal)
     }
     func setCooktail(cooktail: Cooktail) {
         self.cooktail = cooktail
@@ -81,6 +95,21 @@ final class DetailCooktailViewController: UIViewController {
             withIdentifier: Constant.ControllerView.instruction) {
             self.navigationController?.pushViewController(instructionView, animated: true)
         }
+    }
+    @IBAction private func touchUpFavorite(_ sender: Any) {
+        guard let cooktail = cooktail else { return }
+                if let favoriteCooktail = favoriteCooktail {
+                    database.context.delete(favoriteCooktail)
+                    self.favoriteCooktail = nil
+                } else {
+                    favoriteCooktail = CooktailData(context: database.context)
+                    favoriteCooktail?.cooktailId = cooktail.cooktailId
+                    favoriteCooktail?.cooktailName = cooktail.cooktailName
+                    favoriteCooktail?.cooktailImage = cooktail.cooktailImage
+                    favoriteCooktail?.cooktailCategory = cooktail.cooktailCategory
+                }
+                try? database.context.save()
+                updateFavouriteButton()
     }
 }
 extension DetailCooktailViewController: UICollectionViewDataSource {

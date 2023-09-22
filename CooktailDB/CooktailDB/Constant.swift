@@ -51,6 +51,13 @@ class Constant {
         static let list = "ListViewController"
         static let instruction = "InstructionControllerView"
     }
+    struct FavoriteButton {
+        static let fill = "heart.fill"
+        static let notFill = "heart"
+    }
+    struct Database {
+        static let persistentContainer = "CooktailDB"
+    }
     struct CooktailListCell {
         static let imageConnerRadius: CGFloat = 57
         static let cellHeight: CGFloat = 200

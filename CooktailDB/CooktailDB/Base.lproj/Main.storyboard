@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -366,7 +367,19 @@
                             <constraint firstItem="Q96-7N-MN8" firstAttribute="trailing" secondItem="lTO-EN-5g2" secondAttribute="trailing" id="vgK-i8-vA8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="155 Belmont" id="VEp-uU-uNA"/>
+                    <navigationItem key="navigationItem" title="155 Belmont" id="VEp-uU-uNA">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="w7L-Is-xZ9">
+                            <imageReference key="image" image="heart" catalog="system" symbolScale="default"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sqM-Dh-5cY">
+                                <rect key="frame" x="319" y="11" width="75" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="touchUpFavorite:" destination="AcT-UM-A16" eventType="touchUpInside" id="rFX-St-5Kk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alcoholicLabel" destination="qj7-Ei-aZU" id="RmR-Cn-vho"/>
                         <outlet property="backgroundView" destination="Q96-7N-MN8" id="VmP-Fy-DQW"/>
@@ -374,6 +387,7 @@
                         <outlet property="connerView" destination="UJA-95-4BA" id="xMv-4W-6pY"/>
                         <outlet property="cooktailDescriptionLabel" destination="oHB-Ma-cNd" id="hyr-sO-bni"/>
                         <outlet property="cooktailImage" destination="TO8-CK-m2C" id="m33-yl-fnu"/>
+                        <outlet property="favoriteButton" destination="sqM-Dh-5cY" id="Cmm-0b-e3C"/>
                         <outlet property="ingrediantCollectionView" destination="VAd-lf-Hij" id="lgQ-eg-Z09"/>
                         <segue destination="0zY-7l-g2r" kind="show" identifier="InstructionBackToDetail" id="GEl-Y0-rHI"/>
                     </connections>
@@ -419,6 +433,7 @@
     </scenes>
     <resources>
         <image name="Coffee_Tea" width="1500" height="996"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
