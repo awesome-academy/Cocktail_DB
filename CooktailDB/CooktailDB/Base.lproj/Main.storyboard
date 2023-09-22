@@ -403,14 +403,79 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="InstructionControllerView" id="dXH-zM-i4e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's the way to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmW-9P-yC7">
+                                <rect key="frame" x="45" y="102" width="240" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RmW-9P-yC7" secondAttribute="height" multiplier="120:37" id="YaG-GO-CXO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Martini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqJ-51-enR">
+                                <rect key="frame" x="68" y="184" width="326" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <color key="textColor" red="0.91083073616027832" green="0.37708777189254761" blue="0.35102277994155884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKq-u2-DO2">
+                                <rect key="frame" x="20" y="240" width="374" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YKq-u2-DO2" secondAttribute="height" multiplier="187:50" constant="-82.28000000000003" id="tfw-XW-wH2"/>
+                                </constraints>
+                                <string key="text">Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-Ig-kqe">
+                                <rect key="frame" x="293" y="88" width="121" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="By2-fx-pP6"/>
+                                    <constraint firstAttribute="width" constant="121" id="zXF-2t-Srf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cooktail" translatesAutoresizingMaskIntoConstraints="NO" id="SVc-Vb-rNb">
+                                <rect key="frame" x="20" y="396" width="374" height="466"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mizu" translatesAutoresizingMaskIntoConstraints="NO" id="urw-n5-RLF">
+                                <rect key="frame" x="-168" y="88" width="750" height="774"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Ch-5t-aju"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YKq-u2-DO2" firstAttribute="leading" secondItem="5Ch-5t-aju" secondAttribute="leading" constant="20" id="6Hg-3l-ml8"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="leading" secondItem="RmW-9P-yC7" secondAttribute="trailing" constant="8" id="F2M-i4-mhv"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="top" secondItem="5Ch-5t-aju" secondAttribute="top" id="FQn-dv-zl2"/>
+                            <constraint firstItem="urw-n5-RLF" firstAttribute="centerX" secondItem="5Ch-5t-aju" secondAttribute="centerX" id="FvH-WU-dEh"/>
+                            <constraint firstItem="urw-n5-RLF" firstAttribute="bottom" secondItem="5Ch-5t-aju" secondAttribute="bottom" id="NpM-jC-Upi"/>
+                            <constraint firstItem="RmW-9P-yC7" firstAttribute="top" secondItem="5Ch-5t-aju" secondAttribute="top" constant="14" id="PZ0-SJ-Lyc"/>
+                            <constraint firstItem="urw-n5-RLF" firstAttribute="centerY" secondItem="5Ch-5t-aju" secondAttribute="centerY" id="XNg-Dz-gSc"/>
+                            <constraint firstItem="5Ch-5t-aju" firstAttribute="trailing" secondItem="YKq-u2-DO2" secondAttribute="trailing" constant="20" id="ade-gd-NNB"/>
+                            <constraint firstItem="GqJ-51-enR" firstAttribute="top" secondItem="RmW-9P-yC7" secondAttribute="bottom" constant="8" id="hzm-26-7F9"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="top" secondItem="5Ch-5t-aju" secondAttribute="top" id="kGU-Bg-hcP"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="trailing" secondItem="5Ch-5t-aju" secondAttribute="trailing" id="kYV-Mt-9o3"/>
+                            <constraint firstItem="5Ch-5t-aju" firstAttribute="trailing" secondItem="GqJ-51-enR" secondAttribute="trailing" constant="20" id="qXj-kb-ni5"/>
+                            <constraint firstItem="GqJ-51-enR" firstAttribute="leading" secondItem="5Ch-5t-aju" secondAttribute="leading" constant="68" id="tpM-FA-BUi"/>
+                            <constraint firstItem="RmW-9P-yC7" firstAttribute="leading" secondItem="5Ch-5t-aju" secondAttribute="leading" constant="45" id="u7s-WZ-OUr"/>
+                            <constraint firstItem="YKq-u2-DO2" firstAttribute="top" secondItem="GqJ-51-enR" secondAttribute="bottom" constant="8" id="wog-XL-GfT"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="trailing" secondItem="5Ch-5t-aju" secondAttribute="trailing" id="y5O-XE-r9Q"/>
+                            <constraint firstItem="HO1-Ig-kqe" firstAttribute="leading" secondItem="RmW-9P-yC7" secondAttribute="trailing" constant="8" id="yGj-we-Ij6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BFO-Cg-ugf"/>
+                    <connections>
+                        <outlet property="cooktailInstruction" destination="YKq-u2-DO2" id="4pJ-Ef-gFY"/>
+                        <outlet property="cooktailName" destination="GqJ-51-enR" id="GV4-eW-HNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUl-ej-VR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941" y="832"/>
+            <point key="canvasLocation" x="2298.5507246376815" y="831.69642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRS-54-HBT">
@@ -433,7 +498,10 @@
     </scenes>
     <resources>
         <image name="Coffee_Tea" width="1500" height="996"/>
+        <image name="cooktail" width="604" height="1064"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="leaf" width="260" height="288"/>
+        <image name="mizu" width="750" height="1164"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
