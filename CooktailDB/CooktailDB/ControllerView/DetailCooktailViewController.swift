@@ -66,10 +66,11 @@ final class DetailCooktailViewController: UIViewController {
         guard let ingrediants = cooktail?.ingredientNames else { return }
         for index in (0..<ingrediants.count) {
             ingrediantString += ingrediants[index]
-            if index == ingrediants.count - 1 {
+            if index == ingrediants.count - 2 {
+                ingrediantString += " and \(ingrediants[ingrediants.count - 1])"
                 break
             }
-            ingrediantString += " and "
+            ingrediantString += ", "
         }
         cooktailDescriptionLabel.text =
             "\(cooktail?.cooktailName ?? "") is " +

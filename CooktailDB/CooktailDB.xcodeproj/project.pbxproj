@@ -16,6 +16,9 @@
 		BB81E3762ABC303000103F5B /* CooktailDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3742ABC302E00103F5B /* CooktailDB.xcdatamodeld */; };
 		BB81E3782ABC318400103F5B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3772ABC318400103F5B /* DatabaseManager.swift */; };
 		BB81E37A2ABC32C800103F5B /*  CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3792ABC32C800103F5B /*  CoreDataManager.swift */; };
+		BB81E37D2AC2704B00103F5B /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E37B2AC2704500103F5B /* NoInternetViewController.swift */; };
+		BB81E37E2AC2704B00103F5B /* NoInternetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB81E37C2AC2704500103F5B /* NoInternetViewController.xib */; };
+		BB81E3822AC270AE00103F5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3812AC270AE00103F5B /* NetworkManager.swift */; };
 		BBB676EF2AAFFE6B00CCBEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */; };
 		BBB676F32AAFFE6B00CCBEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */; };
 		BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		BB81E3752ABC302F00103F5B /* CooktailDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CooktailDB.xcdatamodel; sourceTree = "<group>"; };
 		BB81E3772ABC318400103F5B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		BB81E3792ABC32C800103F5B /*  CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CoreDataManager.swift"; sourceTree = "<group>"; };
+		BB81E37B2AC2704500103F5B /* NoInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoInternetViewController.swift; path = NoInternet/NoInternetViewController.swift; sourceTree = "<group>"; };
+		BB81E37C2AC2704500103F5B /* NoInternetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoInternetViewController.xib; path = NoInternet/NoInternetViewController.xib; sourceTree = "<group>"; };
+		BB81E3812AC270AE00103F5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BBB676EB2AAFFE6A00CCBEF6 /* CooktailDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooktailDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB676EE2AAFFE6B00CCBEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBB676F22AAFFE6B00CCBEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,14 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		BB81E3802AC2709200103F5B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BB81E3812AC270AE00103F5B /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		BBB676E22AAFFE6A00CCBEF6 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +124,7 @@
 		BBB676ED2AAFFE6A00CCBEF6 /* CooktailDB */ = {
 			isa = PBXGroup;
 			children = (
+				BB81E3802AC2709200103F5B /* Network */,
 				BB81E3732ABC300F00103F5B /* Database */,
 				BBB6772B2AB41AA500CCBEF6 /* Extension */,
 				BBB677142AB1678800CCBEF6 /* ReuseableCell */,
@@ -143,6 +158,8 @@
 				BBB677212AB2B63B00CCBEF6 /* ListViewController.swift */,
 				BBB677232AB2B69100CCBEF6 /* DetailCooktailViewController.swift */,
 				BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */,
+				BB81E37B2AC2704500103F5B /* NoInternetViewController.swift */,
+				BB81E37C2AC2704500103F5B /* NoInternetViewController.xib */,
 			);
 			path = ControllerView;
 			sourceTree = "<group>";
@@ -241,6 +258,7 @@
 			files = (
 				BB1A71082AB8264C0018FADC /* CooktailCollectionViewCell.xib in Resources */,
 				BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */,
+				BB81E37E2AC2704B00103F5B /* NoInternetViewController.xib in Resources */,
 				BBB676FB2AAFFE6F00CCBEF6 /* LaunchScreen.storyboard in Resources */,
 				BBB676F82AAFFE6F00CCBEF6 /* Assets.xcassets in Resources */,
 				BBB676F62AAFFE6B00CCBEF6 /* Main.storyboard in Resources */,
@@ -276,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB81E3822AC270AE00103F5B /* NetworkManager.swift in Sources */,
+				BB81E37D2AC2704B00103F5B /* NoInternetViewController.swift in Sources */,
 				BBB6770B2AB0188100CCBEF6 /* APIManager.swift in Sources */,
 				BB1A71072AB8264C0018FADC /* CooktailCollectionViewCell.swift in Sources */,
 				BB81E3762ABC303000103F5B /* CooktailDB.xcdatamodeld in Sources */,
