@@ -66,14 +66,14 @@ extension ListViewController: UICollectionViewDataSource {
 }
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let toPath = "i="
-        guard let cooktailId = cooktailViewList?[indexPath.row].cooktailId else { return }
-        let url = Constant.BaseUrl.getApiBaseUrl + "/"
-            + Constant.RelativeUrl.getApiRelativeUrl
-            + Constant.Endpoint.lookUp + toPath
-            + cooktailId
-        if cooktails != nil {
-                if let detailView = storyboard?.instantiateViewController(
+        if let _ = cooktails {
+            let toPath = "i="
+            guard let cooktailId = cooktailViewList?[indexPath.row].cooktailId else { return }
+            let url = Constant.BaseUrl.getApiBaseUrl + "/"
+                + Constant.RelativeUrl.getApiRelativeUrl
+                + Constant.Endpoint.lookUp + toPath
+                + cooktailId
+            if let detailView = storyboard?.instantiateViewController(
                   withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
                     APIManager.shared.request(url: url,
                                               type: Cooktails.self,

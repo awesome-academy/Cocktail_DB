@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoInternetViewController" customModule="CooktailDB" customModuleProvider="target">
+            <connections>
+                <outlet property="tryAgainButton" destination="HHc-29-kVN" id="JYY-m2-ppa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N7m-hh-gOp">
+                    <rect key="frame" x="85.5" y="282.5" width="241.5" height="127.5"/>
+                    <color key="tintColor" red="0.91083073616027832" green="0.37708777189254761" blue="0.35102277994155884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="gal-qz-9t4"/>
+                        <constraint firstAttribute="width" constant="240" id="iR4-rt-9PT"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHc-29-kVN">
+                    <rect key="frame" x="153" y="430.5" width="108" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <color key="tintColor" red="0.91083073616027832" green="0.37708777189254761" blue="0.35102277994155884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Try Again">
+                        <color key="titleColor" red="0.91083073616027832" green="0.37708777189254761" blue="0.35102277994155884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tryAgainTouchUp:" destination="-1" eventType="touchUpInside" id="YB4-gM-1kU"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTP-lz-oV7">
+                    <rect key="frame" x="131" y="238.5" width="152" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="152" id="qE3-He-hkr"/>
+                        <constraint firstAttribute="height" constant="36" id="rkO-F4-Ume"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tTP-lz-oV7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1Qi-8o-oMc"/>
+                <constraint firstItem="HHc-29-kVN" firstAttribute="top" secondItem="N7m-hh-gOp" secondAttribute="bottom" constant="20" id="20w-b2-Uju"/>
+                <constraint firstItem="N7m-hh-gOp" firstAttribute="top" secondItem="tTP-lz-oV7" secondAttribute="bottom" constant="8" id="MjB-CW-NjY"/>
+                <constraint firstItem="HHc-29-kVN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QxA-cd-cEu"/>
+                <constraint firstItem="HHc-29-kVN" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Wjc-dp-x0W"/>
+                <constraint firstItem="N7m-hh-gOp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jDn-Ek-AeR"/>
+            </constraints>
+            <point key="canvasLocation" x="18.840579710144929" y="40.848214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

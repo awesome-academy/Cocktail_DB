@@ -18,7 +18,8 @@ final class ViewController: UIViewController {
     private var currentCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCooktail()
+        fetchCooktailInCategory()
+        fetchRandomCooktail()
         configSearchBar()
         configCategory()
         configCollectionView()
@@ -63,8 +64,7 @@ final class ViewController: UIViewController {
             self.popUpErrorAlert(message: "Error fetch database")
         }
     }
-    private func fetchCooktail() {
-        let toPath = "c="
+    private func fetchRandomCooktail() {
         let numberOfRequests = 10
         let dispatchGroup = DispatchGroup()
         for _ in 0..<numberOfRequests {
@@ -74,7 +74,9 @@ final class ViewController: UIViewController {
             dispatchGroup.enter()
             APIManager.shared.request(url: url, type: Cooktails.self, completionHandler: { [weak self] cooktails in
                 guard let cooktails = cooktails.cooktails else { return }
-                self?.cooktails.append(cooktails[0])
+                if !cooktails.isEmpty {
+                    self?.cooktails.append(cooktails[0])
+                }
                 dispatchGroup.leave()
             }, failureHandler: {
                 self.popUpErrorAlert(message: "Error fetching data")
@@ -84,31 +86,42 @@ final class ViewController: UIViewController {
         dispatchGroup.notify(queue: DispatchQueue.main) {
             self.favoriteCollectionView.reloadData()
         }
+    }
+    private func fetchCooktailInCategory() {
+        let toPath = "c="
         for index in 0..<data.count {
              let getApiUrl = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
                 + Constant.Endpoint.filter + toPath + data[index]
             APIManager.shared.request(url: getApiUrl, type: Cooktails.self,
-                                      completionHandler: { [weak self] cooktails in
-                guard let cooktails = cooktails.cooktails else { return }
+                                      completionHandler: { [weak self] cooktailList in
+                guard let cooktailList = cooktailList.cooktails else { return }
                 switch self?.data[index] {
-                case Constant.Category.popular: self?.popularCooktail = cooktails
-                case Constant.Category.ordinary: self?.ordinaryDrinkCooktail = cooktails
+                case Constant.Category.popular: self?.popularCooktail = cooktailList
+                case Constant.Category.ordinary: self?.ordinaryDrinkCooktail = cooktailList
                 case Constant.Category.coffeeTea:
-                    self?.coffeeTea = cooktails
-                case Constant.Category.softSoda: self?.softDrinkSoda = cooktails
+                    self?.coffeeTea = cooktailList
+                case Constant.Category.softSoda: self?.softDrinkSoda = cooktailList
                 default:
                     return
                 }
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    self.categories[index].categoryNumber = cooktails.count
+                    self.categories[index].categoryNumber = cooktailList.count
                     self.categoryCollectionView.reloadData()
                 }
             }, failureHandler: {
                 self.popUpErrorAlert(message: "Error fetching data")
             })
         }
+    }
+    class func instantiateFromStoryboard() -> ViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let VCHome = storyboard.instantiateViewController(
+            withIdentifier: Constant.ControllerView.home) as? ViewController {
+            return VCHome
+        }
+        return ViewController()
     }
     @IBAction private func categorySeeAllTouchUp(_ sender: Any) {
         if let listView = storyboard?.instantiateViewController(
@@ -129,9 +142,9 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currentCollectionView {
-            return min(5, data.count)
+            return min(Constant.LimitNumber.categoryCollectionHomeLimit, data.count)
         } else {
-            return min(10, cooktails.count)
+            return min(Constant.LimitNumber.cooktailCollectionHomeLimit, cooktails.count)
         }
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -173,24 +186,10 @@ extension ViewController: UICollectionViewDelegate {
                 self.navigationController?.pushViewController(listView, animated: true)
             }
         } else {
-            let toPath = "i="
-            guard let cooktailId = cooktails[indexPath.row].cooktailId else { return }
-            let url = Constant.BaseUrl.getApiBaseUrl + "/"
-                + Constant.RelativeUrl.getApiRelativeUrl
-                + Constant.Endpoint.lookUp + toPath
-                + cooktailId
             if let detailView = storyboard?.instantiateViewController(
-                      withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
-                APIManager.shared.request(url: url, type: Cooktails.self,
-                                    completionHandler: { [weak self] cooktails in
-                        guard let cooktails = cooktails.cooktails?[0] else { return }
-                        detailView.setCooktail(cooktail: cooktails)
-                        DispatchQueue.main.async { [weak self] in
-                            self?.navigationController?.pushViewController(detailView, animated: true)
-                        }
-                    }, failureHandler: {
-                        self.popUpErrorAlert(message: "Error fetching data")
-                })
+                withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
+                detailView.setCooktail(cooktail: cooktails[indexPath.row])
+                navigationController?.pushViewController(detailView, animated: true)
             }
         }
     }
