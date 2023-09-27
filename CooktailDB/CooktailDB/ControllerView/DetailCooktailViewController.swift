@@ -1,28 +1,31 @@
 import UIKit
 
 final class DetailCooktailViewController: UIViewController {
-    @IBOutlet private weak var backgroundView: UIView!
-    @IBOutlet private weak var categoryLabel: UILabel!
-    @IBOutlet private weak var cooktailDescriptionLabel: UILabel!
-    @IBOutlet private weak var alcoholicLabel: UILabel!
-    @IBOutlet private weak var cooktailImage: UIImageView!
-    @IBOutlet private weak var connerView: UIView!
-    @IBOutlet private weak var favoriteButton: UIButton!
-    @IBOutlet private weak var ingrediantCollectionView: UICollectionView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var cooktailDescriptionLabel: UILabel!
+    @IBOutlet weak var alcoholicLabel: UILabel!
+    @IBOutlet weak var cooktailImage: UIImageView!
+    @IBOutlet weak var connerView: UIView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var ingrediantCollectionView: UICollectionView!
     private var cooktail: Cooktail?
-    private var ingrediants: [Ingredient] = []
+    var ingrediants: [Ingredient] = []
     private let database = DatabaseManager()
     private var favoriteCooktail: CooktailData?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ingrediantSetting()
         config()
         configContent()
     }
+
     private func config() {
         ingrediantCollectionView.register(nibName: IngrediantCollectionViewCell.self)
         ingrediantCollectionView.dataSource = self
         self.title = cooktail?.cooktailName
+
         if let layout = ingrediantCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
@@ -32,8 +35,10 @@ final class DetailCooktailViewController: UIViewController {
         cooktailImage.layer.borderColor = Constant.DetailDefaultConfig.imageBorderColor
         connerView.layer.cornerRadius = Constant.DetailDefaultConfig.connerCornerRadius
     }
+
     private func ingrediantSetting() {
         var index = 0
+
         if let ingredientNameList = cooktail?.ingredientNames,
            var ingrediantMeansureList = cooktail?.ingredientMeansure {
             while index < ingredientNameList.count {
@@ -56,6 +61,7 @@ final class DetailCooktailViewController: UIViewController {
     private func configContent() {
         guard let cooktailImage = cooktail?.cooktailImage else { return }
         let safeUrl = cooktailImage + Constant.Option.getSmallImage
+
         APIManager.shared.getImg(url: safeUrl) { [weak self] image in
             guard let self = self else { return }
             self.cooktailImage.image = image
@@ -76,6 +82,7 @@ final class DetailCooktailViewController: UIViewController {
             "\(cooktail?.cooktailName ?? "") is " +
             "\(cooktail?.cooktailAlcoholic ?? "") cooktail with "
             + ingrediantString
+
         if let cooktail = cooktail {
             favoriteCooktail = database.checkFavorite(cooktailTarget: cooktail)
         }
@@ -83,7 +90,7 @@ final class DetailCooktailViewController: UIViewController {
             updateFavouriteButton()
         }
     }
-    private func updateFavouriteButton() {
+    func updateFavouriteButton() {
         let isFill = favoriteCooktail == nil
         favoriteButton.setImage(UIImage(systemName: isFill ?
                                             Constant.FavoriteButton.notFill:
@@ -93,27 +100,28 @@ final class DetailCooktailViewController: UIViewController {
     func setCooktail(cooktail: Cooktail) {
         self.cooktail = cooktail
     }
-    @IBAction private func instructionButtonTouchUp (_ sender: Any) {
+    @IBAction func instructionButtonTouchUp (_ sender: Any) {
         if let instructionView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.instruction) as? IntructionViewController {
             instructionView.configCooktail(cooktail: cooktail)
             self.navigationController?.pushViewController(instructionView, animated: true)
         }
     }
-    @IBAction private func touchUpFavorite(_ sender: Any) {
+    @IBAction func touchUpFavorite(_ sender: Any) {
         guard let cooktail = cooktail else { return }
-                if let favoriteCooktail = favoriteCooktail {
-                    database.context.delete(favoriteCooktail)
-                    self.favoriteCooktail = nil
-                } else {
-                    favoriteCooktail = CooktailData(context: database.context)
-                    favoriteCooktail?.cooktailId = cooktail.cooktailId
-                    favoriteCooktail?.cooktailName = cooktail.cooktailName
-                    favoriteCooktail?.cooktailImage = cooktail.cooktailImage
-                    favoriteCooktail?.cooktailCategory = cooktail.cooktailCategory
-                }
-                try? database.context.save()
-                updateFavouriteButton()
+
+        if let favoriteCooktail = favoriteCooktail {
+            database.context.delete(favoriteCooktail)
+            self.favoriteCooktail = nil
+        } else {
+            favoriteCooktail = CooktailData(context: database.context)
+            favoriteCooktail?.cooktailId = cooktail.cooktailId
+            favoriteCooktail?.cooktailName = cooktail.cooktailName
+            favoriteCooktail?.cooktailImage = cooktail.cooktailImage
+            favoriteCooktail?.cooktailCategory = cooktail.cooktailCategory
+        }
+        try? database.context.save()
+        updateFavouriteButton()
     }
 }
 extension DetailCooktailViewController: UICollectionViewDataSource {

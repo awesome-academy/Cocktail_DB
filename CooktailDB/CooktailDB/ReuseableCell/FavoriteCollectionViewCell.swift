@@ -16,6 +16,7 @@ final class FavoriteCollectionViewCell: UICollectionViewCell, ReusableView {
     @IBOutlet private weak var favoriteCooktailName: UILabel!
     @IBOutlet private weak var favoriteCooktailAlcoholic: UILabel!
     @IBOutlet private weak var cooktailCategory: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         config()
@@ -28,6 +29,7 @@ final class FavoriteCollectionViewCell: UICollectionViewCell, ReusableView {
         leadView2.layer.cornerRadius = Constant.FavoriteCollectionViewConfig.cornerRadius
         background.layer.cornerRadius = Constant.FavoriteCollectionViewConfig.cornerRadius
     }
+
     func setData(cooktail: Cooktail) {
         guard let cooktailImage = cooktail.cooktailImage else { return }
         let safeUrl = cooktailImage + "/preview"
@@ -39,4 +41,5 @@ final class FavoriteCollectionViewCell: UICollectionViewCell, ReusableView {
         favoriteCooktailAlcoholic.text = cooktail.cooktailAlcoholic
         cooktailCategory.text = cooktail.cooktailCategory
     }
+
 }

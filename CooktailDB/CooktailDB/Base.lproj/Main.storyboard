@@ -414,7 +414,7 @@
         <!--Intruction View Controller-->
         <scene sceneID="b4G-B8-1gQ">
             <objects>
-                <viewController storyboardIdentifier="InstructionControllerView" id="0zY-7l-g2r" customClass="IntructionViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstructionControllerView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0zY-7l-g2r" customClass="IntructionViewController" customModule="CooktailDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="InstructionControllerView" id="dXH-zM-i4e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -5,13 +5,15 @@ final class ListViewController: UIViewController {
     private var cooktails: [Cooktail]?
     private var categoryViewList: [Category]?
     private var cooktailViewList: [Cooktail]?
-    @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet private weak var listViewCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var listViewCollectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configController()
         configSearchBar()
     }
+
     private func configController() {
         if categories != nil {
             configCategoryView()
@@ -19,24 +21,29 @@ final class ListViewController: UIViewController {
            configCooktail()
         }
     }
+
     private func configSearchBar() {
         searchBar.delegate = self
     }
+
     private func configCooktail() {
         cooktailViewList = cooktails
         listViewCollectionView.register(nibName: CooktailCollectionViewCell.self)
         listViewCollectionView.delegate = self
         listViewCollectionView.dataSource = self
     }
+
     private func configCategoryView() {
         categoryViewList = categories
         listViewCollectionView.register(nibName: CategoryViewCellCollectionViewCell.self)
         listViewCollectionView.delegate = self
         listViewCollectionView.dataSource = self
     }
+
     func setCategories(categories: [Category]) {
         self.categories = categories
     }
+
     func setCooktails(cooktails: [Cooktail]) {
         self.cooktails = cooktails
     }
@@ -50,6 +57,7 @@ extension ListViewController: UICollectionViewDataSource {
         }
         return 0
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let categories = categoryViewList {
@@ -73,6 +81,7 @@ extension ListViewController: UICollectionViewDelegate {
                 + Constant.RelativeUrl.getApiRelativeUrl
                 + Constant.Endpoint.lookUp + toPath
                 + cooktailId
+
             if let detailView = storyboard?.instantiateViewController(
                   withIdentifier: Constant.ControllerView.detail) as? DetailCooktailViewController {
                     APIManager.shared.request(url: url,
@@ -95,6 +104,7 @@ extension ListViewController: UICollectionViewDelegate {
                     + Constant.RelativeUrl.getApiRelativeUrl
                 + Constant.Endpoint.filter + toPath
                 + categoryName
+            
             if let listView = storyboard?.instantiateViewController(
                 withIdentifier: Constant.ControllerView.list) as? ListViewController {
                 APIManager.shared.request(url: url, type: Cooktails.self, completionHandler: { [weak self] cooktails in

@@ -10,6 +10,12 @@
 		BB1A71072AB8264C0018FADC /* CooktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A71052AB8264C0018FADC /* CooktailCollectionViewCell.swift */; };
 		BB1A71082AB8264C0018FADC /* CooktailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1A71062AB8264C0018FADC /* CooktailCollectionViewCell.xib */; };
 		BB1A710A2AB930080018FADC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A71092AB930080018FADC /* UIViewController+.swift */; };
+		BB7D66AA2AC3EFC300016F1C /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66A92AC3EFC300016F1C /* ViewControllerTests.swift */; };
+		BB7D66AC2AC3FCD100016F1C /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66AB2AC3FCD100016F1C /* ListViewControllerTests.swift */; };
+		BB7D66AE2AC4091700016F1C /* DetailCooktailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66AD2AC4091700016F1C /* DetailCooktailViewControllerTests.swift */; };
+		BB7D66B02AC410A400016F1C /* InstructionViewControllerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66AF2AC410A400016F1C /* InstructionViewControllerViewTests.swift */; };
+		BB7D66B22AC412A700016F1C /* NoInternetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66B12AC412A700016F1C /* NoInternetViewControllerTests.swift */; };
+		BB7D66BA2AC42DD600016F1C /* CooktailDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7D66B92AC42DD600016F1C /* CooktailDBUITests.swift */; };
 		BB81E36F2ABA87C200103F5B /* IngrediantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */; };
 		BB81E3702ABA87C200103F5B /* IngrediantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */; };
 		BB81E3722ABAD6DB00103F5B /* IntructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */; };
@@ -40,10 +46,37 @@
 		BBB6772D2AB41AD800CCBEF6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6772C2AB41AD800CCBEF6 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB7D66A42AC3EE0300016F1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBB676E32AAFFE6A00CCBEF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBB676EA2AAFFE6A00CCBEF6;
+			remoteInfo = CooktailDB;
+		};
+		BB7D66BC2AC42DD600016F1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBB676E32AAFFE6A00CCBEF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBB676EA2AAFFE6A00CCBEF6;
+			remoteInfo = CooktailDB;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BB1A71052AB8264C0018FADC /* CooktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooktailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB1A71062AB8264C0018FADC /* CooktailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CooktailCollectionViewCell.xib; sourceTree = "<group>"; };
 		BB1A71092AB930080018FADC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		BB7D669F2AC3EE0200016F1C /* CooktailDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooktailDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7D66A32AC3EE0300016F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB7D66A92AC3EFC300016F1C /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		BB7D66AB2AC3FCD100016F1C /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
+		BB7D66AD2AC4091700016F1C /* DetailCooktailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCooktailViewControllerTests.swift; sourceTree = "<group>"; };
+		BB7D66AF2AC410A400016F1C /* InstructionViewControllerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewControllerViewTests.swift; sourceTree = "<group>"; };
+		BB7D66B12AC412A700016F1C /* NoInternetViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetViewControllerTests.swift; sourceTree = "<group>"; };
+		BB7D66B72AC42DD600016F1C /* CooktailDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CooktailDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7D66B92AC42DD600016F1C /* CooktailDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooktailDBUITests.swift; sourceTree = "<group>"; };
+		BB7D66BB2AC42DD600016F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB81E36D2ABA87C200103F5B /* IngrediantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrediantCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB81E36E2ABA87C200103F5B /* IngrediantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngrediantCollectionViewCell.xib; sourceTree = "<group>"; };
 		BB81E3712ABAD6DB00103F5B /* IntructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntructionViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +110,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB7D669C2AC3EE0200016F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7D66B42AC42DD600016F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBB676E82AAFFE6A00CCBEF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +134,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB7D66A02AC3EE0300016F1C /* CooktailDBTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB7D66A32AC3EE0300016F1C /* Info.plist */,
+				BB7D66A92AC3EFC300016F1C /* ViewControllerTests.swift */,
+				BB7D66AB2AC3FCD100016F1C /* ListViewControllerTests.swift */,
+				BB7D66AD2AC4091700016F1C /* DetailCooktailViewControllerTests.swift */,
+				BB7D66AF2AC410A400016F1C /* InstructionViewControllerViewTests.swift */,
+				BB7D66B12AC412A700016F1C /* NoInternetViewControllerTests.swift */,
+			);
+			path = CooktailDBTests;
+			sourceTree = "<group>";
+		};
+		BB7D66B82AC42DD600016F1C /* CooktailDBUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB7D66B92AC42DD600016F1C /* CooktailDBUITests.swift */,
+				BB7D66BB2AC42DD600016F1C /* Info.plist */,
+			);
+			path = CooktailDBUITests;
+			sourceTree = "<group>";
+		};
 		BB81E3732ABC300F00103F5B /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				BBB676ED2AAFFE6A00CCBEF6 /* CooktailDB */,
+				BB7D66A02AC3EE0300016F1C /* CooktailDBTests */,
+				BB7D66B82AC42DD600016F1C /* CooktailDBUITests */,
 				BBB676EC2AAFFE6A00CCBEF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				BBB676EB2AAFFE6A00CCBEF6 /* CooktailDB.app */,
+				BB7D669F2AC3EE0200016F1C /* CooktailDBTests.xctest */,
+				BB7D66B72AC42DD600016F1C /* CooktailDBUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +274,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB7D669E2AC3EE0200016F1C /* CooktailDBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB7D66A62AC3EE0300016F1C /* Build configuration list for PBXNativeTarget "CooktailDBTests" */;
+			buildPhases = (
+				BB7D669B2AC3EE0200016F1C /* Sources */,
+				BB7D669C2AC3EE0200016F1C /* Frameworks */,
+				BB7D669D2AC3EE0200016F1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB7D66A52AC3EE0300016F1C /* PBXTargetDependency */,
+			);
+			name = CooktailDBTests;
+			productName = CooktailDBTests;
+			productReference = BB7D669F2AC3EE0200016F1C /* CooktailDBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB7D66B62AC42DD600016F1C /* CooktailDBUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB7D66BE2AC42DD600016F1C /* Build configuration list for PBXNativeTarget "CooktailDBUITests" */;
+			buildPhases = (
+				BB7D66B32AC42DD600016F1C /* Sources */,
+				BB7D66B42AC42DD600016F1C /* Frameworks */,
+				BB7D66B52AC42DD600016F1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB7D66BD2AC42DD600016F1C /* PBXTargetDependency */,
+			);
+			name = CooktailDBUITests;
+			productName = CooktailDBUITests;
+			productReference = BB7D66B72AC42DD600016F1C /* CooktailDBUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BBB676EA2AAFFE6A00CCBEF6 /* CooktailDB */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBB676FF2AAFFE6F00CCBEF6 /* Build configuration list for PBXNativeTarget "CooktailDB" */;
@@ -228,6 +337,14 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					BB7D669E2AC3EE0200016F1C = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = BBB676EA2AAFFE6A00CCBEF6;
+					};
+					BB7D66B62AC42DD600016F1C = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = BBB676EA2AAFFE6A00CCBEF6;
+					};
 					BBB676EA2AAFFE6A00CCBEF6 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -247,11 +364,27 @@
 			projectRoot = "";
 			targets = (
 				BBB676EA2AAFFE6A00CCBEF6 /* CooktailDB */,
+				BB7D669E2AC3EE0200016F1C /* CooktailDBTests */,
+				BB7D66B62AC42DD600016F1C /* CooktailDBUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB7D669D2AC3EE0200016F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7D66B52AC42DD600016F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBB676E92AAFFE6A00CCBEF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +423,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB7D669B2AC3EE0200016F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB7D66B22AC412A700016F1C /* NoInternetViewControllerTests.swift in Sources */,
+				BB7D66AC2AC3FCD100016F1C /* ListViewControllerTests.swift in Sources */,
+				BB7D66AA2AC3EFC300016F1C /* ViewControllerTests.swift in Sources */,
+				BB7D66B02AC410A400016F1C /* InstructionViewControllerViewTests.swift in Sources */,
+				BB7D66AE2AC4091700016F1C /* DetailCooktailViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7D66B32AC42DD600016F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB7D66BA2AC42DD600016F1C /* CooktailDBUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBB676E72AAFFE6A00CCBEF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +475,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BB7D66A52AC3EE0300016F1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBB676EA2AAFFE6A00CCBEF6 /* CooktailDB */;
+			targetProxy = BB7D66A42AC3EE0300016F1C /* PBXContainerItemProxy */;
+		};
+		BB7D66BD2AC42DD600016F1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBB676EA2AAFFE6A00CCBEF6 /* CooktailDB */;
+			targetProxy = BB7D66BC2AC42DD600016F1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BBB676F42AAFFE6B00CCBEF6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -342,6 +508,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BB7D66A72AC3EE0300016F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CooktailDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sun.CooktailDBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CooktailDB.app/CooktailDB";
+			};
+			name = Debug;
+		};
+		BB7D66A82AC3EE0300016F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CooktailDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sun.CooktailDBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CooktailDB.app/CooktailDB";
+			};
+			name = Release;
+		};
+		BB7D66BF2AC42DD600016F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CooktailDBUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sun.CooktailDBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CooktailDB;
+			};
+			name = Debug;
+		};
+		BB7D66C02AC42DD600016F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CooktailDBUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sun.CooktailDBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CooktailDB;
+			};
+			name = Release;
+		};
 		BBB676FD2AAFFE6F00CCBEF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -497,6 +737,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB7D66A62AC3EE0300016F1C /* Build configuration list for PBXNativeTarget "CooktailDBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB7D66A72AC3EE0300016F1C /* Debug */,
+				BB7D66A82AC3EE0300016F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB7D66BE2AC42DD600016F1C /* Build configuration list for PBXNativeTarget "CooktailDBUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB7D66BF2AC42DD600016F1C /* Debug */,
+				BB7D66C02AC42DD600016F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BBB676E62AAFFE6A00CCBEF6 /* Build configuration list for PBXProject "CooktailDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

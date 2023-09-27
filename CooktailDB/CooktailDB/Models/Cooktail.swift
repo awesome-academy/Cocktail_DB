@@ -23,7 +23,19 @@ struct Cooktail: Decodable {
              strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15
         case instruction = "strInstructions"
     }
-
+    init(cooktailId: String, cooktailName: String, cooktailCategory: String, ingrediant: Ingredient) {
+        self.cooktailId = cooktailId
+        self.cooktailName = cooktailName
+        self.cooktailCategory = cooktailCategory
+        self.ingredientNames?.append(ingrediant.ingredientName ?? "1")
+        self.ingredientMeansure?.append(ingrediant.ingredientMeansure ?? "2")
+    }
+    init(cooktailId: String, cooktailName: String, cooktailCategory: String, instruction: String) {
+        self.cooktailId = cooktailId
+        self.cooktailName = cooktailName
+        self.cooktailCategory = cooktailCategory
+        self.instruction = instruction
+    }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         cooktailId = try container.decodeIfPresent(String.self, forKey: .cooktailId)
