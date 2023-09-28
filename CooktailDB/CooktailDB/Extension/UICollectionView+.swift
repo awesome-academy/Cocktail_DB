@@ -6,11 +6,13 @@ extension UICollectionView {
             let identifier = T.defaultReuseIdentifier
             let nibName = T.nibName
             var bundle: Bundle?
+
             if let bundleName = bundleClass {
                 bundle = Bundle(for: bundleName)
             }
         register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier: identifier)
-        }
+    }
+
     func dequeueReusableCell<T: UICollectionViewCell>(_ type: T.Type, indexPath: IndexPath) -> T where T: ReusableView {
         guard let cell =  self.dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier,
                                                    for: indexPath) as? T else {

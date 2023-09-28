@@ -3,19 +3,20 @@ import UIKit
 final class ViewController: UIViewController {
     private let data = ["Cocktail", "Ordinary%20Drink", "Coffee%20%5C/%20Tea", "Soft%20Drink"]
     private let image = ["Popular", "Ordinary_Drink", "Coffee_Tea", "Soft_Drink_Soda"]
-    private var popularCooktail: [Cooktail] = []
-    private var softDrinkSoda: [Cooktail] = []
-    private var coffeeTea: [Cooktail] = []
-    private var ordinaryDrinkCooktail: [Cooktail] = []
+    var popularCooktail: [Cooktail] = []
+    var softDrinkSoda: [Cooktail] = []
+    var coffeeTea: [Cooktail] = []
+     var ordinaryDrinkCooktail: [Cooktail] = []
     private var categories: [Category] = []
     private var cooktails: [Cooktail] = []
     private var favoriteCooktails: [Cooktail] = []
     private let database = DatabaseManager()
     private var favoriteCooktailList: [CooktailData]?
-    @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet private weak var favoriteCollectionView: UICollectionView!
-    @IBOutlet private weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var favoriteCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     private var currentCollectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCooktailInCategory()
@@ -24,6 +25,7 @@ final class ViewController: UIViewController {
         configCategory()
         configCollectionView()
     }
+
     private func configCategory() {
         categories = (0..<data.count).map { index in
             return Category(categoryImage: image[index],
@@ -31,6 +33,7 @@ final class ViewController: UIViewController {
                             categoryNumber: index + 1)
         }
     }
+
     private func fetchFavoriteCooktailDb() {
         fetchDatabase()
         if let favoriteList = favoriteCooktailList {
@@ -39,9 +42,11 @@ final class ViewController: UIViewController {
             }
         }
     }
+
     private func configSearchBar() {
         searchBar.delegate = self
     }
+
     private func configCollectionView() {
         if let layout = categoryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -57,6 +62,7 @@ final class ViewController: UIViewController {
         favoriteCollectionView.dataSource = self
         favoriteCollectionView.delegate = self
     }
+
     private func fetchDatabase() {
         do {
             favoriteCooktailList = try database.context.fetch(database.fetchRequest)
@@ -64,9 +70,11 @@ final class ViewController: UIViewController {
             self.popUpErrorAlert(message: "Error fetch database")
         }
     }
+
     private func fetchRandomCooktail() {
         let numberOfRequests = 10
         let dispatchGroup = DispatchGroup()
+
         for _ in 0..<numberOfRequests {
             let url = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
@@ -87,8 +95,10 @@ final class ViewController: UIViewController {
             self.favoriteCollectionView.reloadData()
         }
     }
+
     private func fetchCooktailInCategory() {
         let toPath = "c="
+
         for index in 0..<data.count {
              let getApiUrl = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
@@ -115,14 +125,25 @@ final class ViewController: UIViewController {
             })
         }
     }
+
+    func getRandomCooktail() -> [Cooktail] {
+        return cooktails
+    }
+
+    func getPopularCooktail() -> [Cooktail] {
+        return popularCooktail
+    }
+
     class func instantiateFromStoryboard() -> ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         if let VCHome = storyboard.instantiateViewController(
             withIdentifier: Constant.ControllerView.home) as? ViewController {
             return VCHome
         }
         return ViewController()
     }
+
     @IBAction private func categorySeeAllTouchUp(_ sender: Any) {
         if let listView = storyboard?.instantiateViewController(
             withIdentifier: Constant.ControllerView.list) as? ListViewController {
@@ -130,6 +151,7 @@ final class ViewController: UIViewController {
             self.navigationController?.pushViewController(listView, animated: true)
         }
     }
+
     @IBAction private func favoriteSeeAllTouchUp(_ sender: Any) {
         fetchFavoriteCooktailDb()
         if let listView = storyboard?.instantiateViewController(
@@ -139,6 +161,7 @@ final class ViewController: UIViewController {
         }
     }
 }
+
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == currentCollectionView {
@@ -147,6 +170,7 @@ extension ViewController: UICollectionViewDataSource {
             return min(Constant.LimitNumber.cooktailCollectionHomeLimit, cooktails.count)
         }
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == currentCollectionView {
@@ -159,6 +183,7 @@ extension ViewController: UICollectionViewDataSource {
             return cell
         }
     }
+
 }
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
@@ -198,9 +223,11 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         let toPath = "s="
         guard let text = searchBar.text else { return }
+
         let url = Constant.BaseUrl.getApiBaseUrl + "/"
                 + Constant.RelativeUrl.getApiRelativeUrl
             + Constant.Endpoint.search + toPath + text
